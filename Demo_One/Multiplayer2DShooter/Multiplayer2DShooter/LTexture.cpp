@@ -14,6 +14,30 @@ LTexture::~LTexture() {
 	free();
 }
 
+
+
+void LTexture::SetColor(Uint8 red, Uint8 green, Uint8 blue) 
+{
+
+	SDL_SetTextureColorMod(mTexture, red, green, blue);
+
+}
+
+
+void LTexture::setBlendMode(SDL_BlendMode blending)
+{
+
+	SDL_SetTextureBlendMode(mTexture, blending);
+
+}
+
+void LTexture::setAlpha(Uint8 alpha)
+{
+	SDL_SetTextureAlphaMod(mTexture, alpha);
+
+}
+
+
 //Loads image at specified path
 bool LTexture::loadFromFile(SDL_Renderer* renderer, std::string path) {
 	free();
@@ -30,8 +54,8 @@ bool LTexture::loadFromFile(SDL_Renderer* renderer, std::string path) {
 	}
 	else
 	{
-		SDL_SetSurfaceBlendMode(loadedSurface, SDL_BLENDMODE_BLEND);
-
+		SDL_SetColorKey(loadedSurface, SDL_TRUE, SDL_MapRGB(loadedSurface->format, 0, 0xFF, 0xFF));
+		
 		
 		newTexture = SDL_CreateTextureFromSurface(renderer, loadedSurface);
 		if (newTexture == NULL)
@@ -43,7 +67,8 @@ bool LTexture::loadFromFile(SDL_Renderer* renderer, std::string path) {
 			mWidth = loadedSurface->w;
 			mHeight = loadedSurface->h;
 		}
-		SDL_DestroySurface(loadedSurface);
+		SDL_FreeSurface(loadedSurface);
+	
 
 	}
 
@@ -66,7 +91,15 @@ void LTexture::free() {
 }
 
 //Renders texture at given point
-void LTexture::render(SDL_Renderer* renderer ,int x, int y) {
-	SDL_FRect renderQuad = { x, y, mWidth, mHeight };
-	SDL_RenderTexture(renderer, mTexture, NULL, &renderQuad);
+void LTexture::render(SDL_Renderer* renderer, int x, int y, double angle = 0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE, SDL_Rect* clip = NULL) {
+	SDL_Rect renderQuad = { x, y, mWidth, mHeight };
+	
+	if (clip != NULL)
+	{
+		renderQuad.w = clip->w;
+		renderQuad.h = clip->h;
+	}
+
+
+	SDL_RenderCopy(renderer, mTexture, clip, &renderQuad);
 }

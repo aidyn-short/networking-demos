@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
-#include <SDL3/sdl.h>
-#include <SDL3_image/SDL_image.h>
+#include <SDL2/SDL_image.h>
 
 
 class LTexture
@@ -19,8 +18,17 @@ public:
     //Deallocates texture
     void free();
 
+
+    void SetColor(Uint8 red, Uint8 green, Uint8 blue);
+
+    void setBlendMode(SDL_BlendMode blending);
+
+    void setAlpha(Uint8 alpha);
+
+
+
     //Renders texture at given point
-    void render(SDL_Renderer* renderer, int x, int y);
+    void render(SDL_Renderer* renderer, int x, int y, double angle = 0.0, SDL_Point*  center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE, SDL_Rect* clip = NULL);
 
     //Gets image dimensions
     int getWidth() { return mWidth; }

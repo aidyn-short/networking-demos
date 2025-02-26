@@ -1,6 +1,6 @@
-#include <SDL3/SDL.h>
-#include <SDL3/SDL_main.h>
-#include<SDL3_image/SDL_image.h>
+#define SDL_MAIN_HANDLED
+#include  <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <stdio.h>
 #include <string>
 #include <iostream>
@@ -42,6 +42,17 @@ LTexture gFooTexture;
 
 LTexture gBackgroundTexture;
 
+
+
+SDL_Rect gSpriteClips[4];
+LTexture gSpriteSheetTexture;
+
+
+const int WALKING_ANIMATION_FRAMES = 4;
+SDL_Rect gSpriteClips[WALKING_ANIMATION_FRAMES];
+LTexture gSpriteSheetTexture;
+
+
 bool init() {
 
 	bool success = true;
@@ -49,7 +60,7 @@ bool init() {
 
 	
 
-	if (!SDL_Init(SDL_INIT_VIDEO))
+	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		std::cout << "Couldn't initalize";
 		success = false;
@@ -57,10 +68,13 @@ bool init() {
 	}
 	else
 	{
+		if (!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1"))
+		{
+			printf("Warning: Linear texture filtering not enabled!");
+		}
 
 
-
-		gWindow = SDL_CreateWindow("SDL Tutorial", SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+		gWindow = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 		if (gWindow == NULL)
 		{
 			std::cout << "Window couldn't be created";
@@ -68,7 +82,7 @@ bool init() {
 		}
 		else
 		{
-			gRenderer = SDL_CreateRenderer(gWindow, NULL);
+			gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 			if (gRenderer == NULL)
 			{
 				std::cout << "Failed to create renderer";
@@ -77,6 +91,17 @@ bool init() {
 			else
 			{
 				SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+
+
+
+				int imgFlags = IMG_INIT_PNG;
+				if (!(IMG_Init(imgFlags) & imgFlags))
+				{
+					std::cout << "Failed to init pngs";
+					success = false;
+				}
+
+
 			}
 
 			gScreenSurface = SDL_GetWindowSurface(gWindow);
@@ -86,31 +111,6 @@ bool init() {
 
 
 	return success;
-}
-
-
-SDL_Texture* loadTexture(std::string path) {
-
-	SDL_Texture* newTexture = NULL;
-	SDL_Surface* loadedSurface = IMG_Load(path.c_str());
-
-	if (loadedSurface == NULL)
-	{
-		std::cout << "Unable to load img";
-	}
-	else
-	{
-		newTexture = SDL_CreateTextureFromSurface(gRenderer, loadedSurface);
-		if (newTexture == NULL)
-		{
-			std::cout << "Unable to create texture from loadedSurface";
-		}
-		SDL_DestroySurface(loadedSurface);
-
-	}
-
-	return newTexture;
-
 }
 
 
@@ -128,12 +128,12 @@ SDL_Surface* loadSurface(std::string path) {
 	}
 	else
 	{
-		optimizedSurface = SDL_ConvertSurface(temportarySurface, gScreenSurface->format);
+		optimizedSurface = SDL_ConvertSurface(temportarySurface, gScreenSurface->format, 0);
 		if (optimizedSurface == NULL)
 		{
 			std::cout << "Optimized image failed";
 		}
-		SDL_DestroySurface(temportarySurface);
+		SDL_FreeSurface(temportarySurface);
 	}
 
 	return optimizedSurface;
@@ -156,57 +156,38 @@ bool loadMedia() {
 		std::cout << "failed to load background";
 		success = false;
 	}
-/*
-	gTexture = loadTexture("texture.bmp");
-	if (gTexture == NULL)
+
+	if (!gSpriteSheetTexture.loadFromFile(gRenderer, "dots.png"))
 	{
-		std::cout << "Failed to load texture from image";
+		printf("Failed to load sprite sheet texture!\n");
 		success = false;
 	}
-	*/
-
-
-	/*
-	gKeyPressSurface[KEY_PRESS_SURFACE_DEFAULT] = loadSurface("press.bmp");
-	if (gKeyPressSurface[KEY_PRESS_SURFACE_DEFAULT] == NULL)
+	else
 	{
-		std::cout << "Unable to load image";
-		success = false;
+		//Set top left sprite
+		gSpriteClips[0].x = 0;
+		gSpriteClips[0].y = 0;
+		gSpriteClips[0].w = 100;
+		gSpriteClips[0].h = 100;
+
+		//Set top right sprite
+		gSpriteClips[1].x = 100;
+		gSpriteClips[1].y = 0;
+		gSpriteClips[1].w = 100;
+		gSpriteClips[1].h = 100;
+
+		//Set bottom left sprite
+		gSpriteClips[2].x = 0;
+		gSpriteClips[2].y = 100;
+		gSpriteClips[2].w = 100;
+		gSpriteClips[2].h = 100;
+
+		//Set bottom right sprite
+		gSpriteClips[3].x = 100;
+		gSpriteClips[3].y = 100;
+		gSpriteClips[3].w = 100;
+		gSpriteClips[3].h = 100;
 	}
-
-
-	gKeyPressSurface[KEY_PRESS_SURFACE_W] = loadSurface("up.bmp");
-	if (gKeyPressSurface[KEY_PRESS_SURFACE_W] == NULL)
-	{
-		printf("Failed to load up image!\n");
-		success = false;
-	}
-
-	//Load down surface
-	gKeyPressSurface[KEY_PRESS_SURFACE_S] = loadSurface("down.bmp");
-	if (gKeyPressSurface[KEY_PRESS_SURFACE_S] == NULL)
-	{
-		printf("Failed to load down image!\n");
-		success = false;
-	}
-
-	//Load left surface
-	gKeyPressSurface[KEY_PRESS_SURFACE_A] = loadSurface("left.bmp");
-	if (gKeyPressSurface[KEY_PRESS_SURFACE_A] == NULL)
-	{
-		printf("Failed to load left image!\n");
-		success = false;
-	}
-
-	//Load right surface
-	gKeyPressSurface[KEY_PRESS_SURFACE_D] = loadSurface("right.bmp");
-	if (gKeyPressSurface[KEY_PRESS_SURFACE_D] == NULL)
-	{
-		printf("Failed to load right image!\n");
-		success = false;
-	}
-
-	*/
 
 
 
@@ -222,7 +203,7 @@ void close() {
 	gFooTexture.free();
 	gBackgroundTexture.free();
 
-	SDL_DestroySurface(gCurrentSurface);
+	SDL_FreeSurface(gCurrentSurface);
 	gCurrentSurface = NULL;
 	SDL_DestroyTexture(gTexture);
 	gTexture = NULL;
@@ -242,7 +223,8 @@ void close() {
 
 
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* args[])
+{
 
 	if (!init())
 	{
@@ -272,7 +254,7 @@ int main(int argc, char* argv[]) {
 
 				while (SDL_PollEvent(&e) != 0)
 				{
-					if (e.type == SDL_EVENT_QUIT)
+					if (e.type == SDL_QUIT)
 					{
 						quit = true;
 						std::cout << "QUIT";
@@ -282,16 +264,34 @@ int main(int argc, char* argv[]) {
 					SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
 					SDL_RenderClear(gRenderer);
 			
+					//gBackgroundTexture.SetColor(100, 200, 0);
+
+
+					//gBackgroundTexture.setBlendMode(SDL_BLENDMODE_BLEND);
+
+				//	gBackgroundTexture.setAlpha(100);
+
+					
 
 					gBackgroundTexture.render(gRenderer,0, 0);
 
+
+
+
 					gFooTexture.render(gRenderer,240, 190);
-	/*
-					SDL_FRect fillRect = { SCREEN_WIDTH / 4, SCREEN_HEIGHT / 4, SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 };
-					SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
-					SDL_RenderFillRect(gRenderer, &fillRect);
-					*/
-				//	SDL_RenderTexture(gRenderer, gTexture, NULL, NULL);
+
+					//Render top left sprite
+					gSpriteSheetTexture.render(gRenderer,0, 0, &gSpriteClips[0]);
+
+					//Render top right sprite
+					gSpriteSheetTexture.render(gRenderer, SCREEN_WIDTH - gSpriteClips[1].w, 0, &gSpriteClips[1]);
+
+					//Render bottom left sprite
+					gSpriteSheetTexture.render(gRenderer, 0, SCREEN_HEIGHT - gSpriteClips[2].h, &gSpriteClips[2]);
+
+					//Render bottom right sprite
+					gSpriteSheetTexture.render(gRenderer, SCREEN_WIDTH - gSpriteClips[3].w, SCREEN_HEIGHT - gSpriteClips[3].h, &gSpriteClips[3]);
+
 
 					SDL_RenderPresent(gRenderer);
 
@@ -333,9 +333,6 @@ int main(int argc, char* argv[]) {
 					
 				}
 			}
-
-			
-			//SDL_Event e; bool quit = false; while (quit == false) { while (SDL_PollEvent(&e)) { if (e.type == SDL_EVENT_QUIT) quit = true; } }
 		}
 
 	}
