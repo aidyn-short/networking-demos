@@ -14,6 +14,30 @@ LTexture::~LTexture() {
 	free();
 }
 
+bool LTexture::loadFromRenderedText(SDL_Renderer* renderer, std::string textureText, SDL_Color textColor, TTF_Font* font) {
+	free();
+	SDL_Surface* textSurface = TTF_RenderText_Solid(font, textureText.c_str(), textColor);
+	if (textSurface == NULL)
+	{
+		std::cout << "Unable to render text Surface";
+	}
+	else
+	{
+		mTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
+		if (mTexture == NULL)
+		{
+			std::cout << "Failed to create texture from textSurface";
+		}
+		else
+		{
+			mWidth = textSurface->w;
+			mHeight = textSurface->h;
+		}
+		SDL_FreeSurface(textSurface);
+	}
+	return mTexture != NULL;
+
+}
 
 
 void LTexture::SetColor(Uint8 red, Uint8 green, Uint8 blue) 
@@ -91,8 +115,10 @@ void LTexture::free() {
 }
 
 //Renders texture at given point
-void LTexture::render(SDL_Renderer* renderer, int x, int y, double angle = 0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE, SDL_Rect* clip = NULL) {
-	SDL_Rect renderQuad = { x, y, mWidth, mHeight };
+void LTexture::render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip)
+{
+
+SDL_Rect renderQuad = { x, y, mWidth, mHeight };
 	
 	if (clip != NULL)
 	{
@@ -100,6 +126,7 @@ void LTexture::render(SDL_Renderer* renderer, int x, int y, double angle = 0.0, 
 		renderQuad.h = clip->h;
 	}
 
+	SDL_RenderCopyEx(renderer, mTexture, clip, &renderQuad, angle, center, flip);
 
-	SDL_RenderCopy(renderer, mTexture, clip, &renderQuad);
+	//SDL_RenderCopy(renderer, mTexture, clip, &renderQuad);
 }

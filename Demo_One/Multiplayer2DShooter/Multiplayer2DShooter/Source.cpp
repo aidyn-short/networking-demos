@@ -1,10 +1,12 @@
 #define SDL_MAIN_HANDLED
 #include  <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #include <stdio.h>
 #include <string>
 #include <iostream>
 #include "LTexture.h"
+#include <cmath>
 
 SDL_Window* gWindow = NULL;
 
@@ -47,10 +49,31 @@ LTexture gBackgroundTexture;
 SDL_Rect gSpriteClips[4];
 LTexture gSpriteSheetTexture;
 
+//Angle of rotation
+double degrees = 0;
 
-const int WALKING_ANIMATION_FRAMES = 4;
-SDL_Rect gSpriteClips[WALKING_ANIMATION_FRAMES];
-LTexture gSpriteSheetTexture;
+//Flip type
+SDL_RendererFlip flipType = SDL_FLIP_NONE;
+
+TTF_Font* gFont = NULL;
+
+LTexture gTextTexture;
+
+
+
+//Button constants
+const int BUTTON_WIDTH = 300;
+const int BUTTON_HEIGHT = 200;
+const int TOTAL_BUTTONS = 4;
+
+enum LButtonSprite
+{
+	BUTTON_SPRITE_MOUSE_OUT = 0,
+	BUTTON_SPRITE_MOUSE_OVER_MOTION = 1,
+	BUTTON_SPRITE_MOUSE_DOWN = 2,
+	BUTTON_SPRITE_MOUSE_UP = 3,
+	BUTTON_SPRITE_TOTAL = 4
+};
 
 
 bool init() {
@@ -101,6 +124,12 @@ bool init() {
 					success = false;
 				}
 
+				if (TTF_Init() == -1)
+				{
+					std::cout << "Could not initalize SDL_TTF";
+					success = false;
+				}
+
 
 			}
 
@@ -114,36 +143,28 @@ bool init() {
 }
 
 
-
-SDL_Surface* loadSurface(std::string path) {
-
-	SDL_Surface* optimizedSurface = NULL;
-
-	SDL_Surface* temportarySurface =  IMG_Load(path.c_str());
-
-	if (temportarySurface == NULL)
-	{
-		std::cout << "Unable to load image";
-		return NULL;
-	}
-	else
-	{
-		optimizedSurface = SDL_ConvertSurface(temportarySurface, gScreenSurface->format, 0);
-		if (optimizedSurface == NULL)
-		{
-			std::cout << "Optimized image failed";
-		}
-		SDL_FreeSurface(temportarySurface);
-	}
-
-	return optimizedSurface;
-
-
-}
-
 bool loadMedia() {
 
 	bool success = true;
+
+
+	gFont = TTF_OpenFont("lazy.ttf", 28);
+	if (gFont == NULL)
+	{
+		std::cout << "Failed to load font";
+		success = false;
+	}
+	else
+	{
+		SDL_Color textColor = { 0,0,0,0 };
+		if (!gTextTexture.loadFromRenderedText(gRenderer, "The quick brown fox jumps over the lazy dog", textColor, gFont))
+		{
+			std::cout << "Failed to load text texture";
+			success = false;
+		}
+	}
+
+
 
 	if (!gFooTexture.loadFromFile(gRenderer, "foo.bmp"))
 	{
@@ -208,13 +229,16 @@ void close() {
 	SDL_DestroyTexture(gTexture);
 	gTexture = NULL;
 
+	TTF_CloseFont(gFont);
+	gFont = NULL;
+
 	SDL_DestroyWindow(gWindow);
 	SDL_DestroyRenderer(gRenderer);
 	gWindow = NULL;
 	gRenderer = NULL;
 
-
-
+	TTF_Quit();
+	IMG_Quit();
 	SDL_Quit();
 }
 
@@ -259,10 +283,33 @@ int main(int argc, char* args[])
 						quit = true;
 						std::cout << "QUIT";
 					}
+					else if (e.type == SDL_KEYDOWN)
+					{
+						switch (e.key.keysym.sym)
+						{
+						case SDLK_a:
+							degrees -= 60;
+							break;
 
+						case SDLK_d:
+							degrees += 60;
+							break;
 
-					SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
-					SDL_RenderClear(gRenderer);
+						case SDLK_q:
+							flipType = SDL_FLIP_HORIZONTAL;
+							break;
+
+						case SDLK_w:
+							flipType = SDL_FLIP_NONE;
+							break;
+
+						case SDLK_e:
+							flipType = SDL_FLIP_VERTICAL;
+							break;
+						}
+					}
+
+				
 			
 					//gBackgroundTexture.SetColor(100, 200, 0);
 
@@ -271,26 +318,27 @@ int main(int argc, char* args[])
 
 				//	gBackgroundTexture.setAlpha(100);
 
-					
+					SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+					SDL_RenderClear(gRenderer);
 
-					gBackgroundTexture.render(gRenderer,0, 0);
+				//	gBackgroundTexture.render(gRenderer,0, 0);
 
 
+					gTextTexture.render(gRenderer, (SCREEN_WIDTH - gTextTexture.getWidth()) / 2, (SCREEN_HEIGHT - gTextTexture.getHeight()) / 2);
 
-
-					gFooTexture.render(gRenderer,240, 190);
+					//gFooTexture.render(gRenderer,240, 190, NULL, degrees, NULL, flipType);
 
 					//Render top left sprite
-					gSpriteSheetTexture.render(gRenderer,0, 0, &gSpriteClips[0]);
+				//	gSpriteSheetTexture.render(gRenderer,0, 0, &gSpriteClips[0]);
 
 					//Render top right sprite
-					gSpriteSheetTexture.render(gRenderer, SCREEN_WIDTH - gSpriteClips[1].w, 0, &gSpriteClips[1]);
+				//	gSpriteSheetTexture.render(gRenderer, SCREEN_WIDTH - gSpriteClips[1].w, 0, &gSpriteClips[1]);
 
 					//Render bottom left sprite
-					gSpriteSheetTexture.render(gRenderer, 0, SCREEN_HEIGHT - gSpriteClips[2].h, &gSpriteClips[2]);
+				//	gSpriteSheetTexture.render(gRenderer, 0, SCREEN_HEIGHT - gSpriteClips[2].h, &gSpriteClips[2]);
 
 					//Render bottom right sprite
-					gSpriteSheetTexture.render(gRenderer, SCREEN_WIDTH - gSpriteClips[3].w, SCREEN_HEIGHT - gSpriteClips[3].h, &gSpriteClips[3]);
+				//	gSpriteSheetTexture.render(gRenderer, SCREEN_WIDTH - gSpriteClips[3].w, SCREEN_HEIGHT - gSpriteClips[3].h, &gSpriteClips[3]);
 
 
 					SDL_RenderPresent(gRenderer);
