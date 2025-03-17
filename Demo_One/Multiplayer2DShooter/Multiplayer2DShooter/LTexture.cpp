@@ -16,6 +16,10 @@ LTexture::~LTexture() {
 
 bool LTexture::loadFromRenderedText(SDL_Renderer* renderer, std::string textureText, SDL_Color textColor, TTF_Font* font) {
 	free();
+
+
+
+
 	SDL_Surface* textSurface = TTF_RenderText_Solid(font, textureText.c_str(), textColor);
 	if (textSurface == NULL)
 	{

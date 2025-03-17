@@ -129,11 +129,15 @@
   <ItemGroup>
     <ClCompile Include="LButton.cpp" />
     <ClCompile Include="LTexture.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LButton.h" />
     <ClInclude Include="LTexture.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

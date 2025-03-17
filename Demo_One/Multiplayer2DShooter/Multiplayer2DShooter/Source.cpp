@@ -7,6 +7,11 @@
 #include <iostream>
 #include "LTexture.h"
 #include <cmath>
+#include "LButton.h"
+#include <SDL2/SDL_mixer.h>
+#include "Timer.h"
+#include <sstream>
+#include "Player.h"
 
 SDL_Window* gWindow = NULL;
 
@@ -59,12 +64,17 @@ TTF_Font* gFont = NULL;
 
 LTexture gTextTexture;
 
+//The music that will be played
+Mix_Music* gMusic = NULL;
+
+//The sound effects that will be used
+Mix_Chunk* gScratch = NULL;
+Mix_Chunk* gHigh = NULL;
+Mix_Chunk* gMedium = NULL;
+Mix_Chunk* gLow = NULL;
 
 
-//Button constants
-const int BUTTON_WIDTH = 300;
-const int BUTTON_HEIGHT = 200;
-const int TOTAL_BUTTONS = 4;
+
 
 enum LButtonSprite
 {
@@ -129,6 +139,12 @@ bool init() {
 					std::cout << "Could not initalize SDL_TTF";
 					success = false;
 				}
+				if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+				{
+					std::cout << "Failed to init mixer";
+					success = false;
+				}
+
 
 
 			}
@@ -148,69 +164,41 @@ bool loadMedia() {
 	bool success = true;
 
 
-	gFont = TTF_OpenFont("lazy.ttf", 28);
-	if (gFont == NULL)
+	gMusic = Mix_LoadMUS("beat.wav");
+	if (gMusic == NULL)
 	{
-		std::cout << "Failed to load font";
-		success = false;
-	}
-	else
-	{
-		SDL_Color textColor = { 0,0,0,0 };
-		if (!gTextTexture.loadFromRenderedText(gRenderer, "The quick brown fox jumps over the lazy dog", textColor, gFont))
-		{
-			std::cout << "Failed to load text texture";
-			success = false;
-		}
-	}
-
-
-
-	if (!gFooTexture.loadFromFile(gRenderer, "foo.bmp"))
-	{
-		std::cout << "Failed to load foo img";
+		printf("Failed to load beat music! SDL_mixer Error: %s\n", Mix_GetError());
 		success = false;
 	}
 
-	if (!gBackgroundTexture.loadFromFile(gRenderer, "background.bmp"))
+	//Load sound effects
+	gScratch = Mix_LoadWAV("scratch.wav");
+	if (gScratch == NULL)
 	{
-		std::cout << "failed to load background";
+		printf("Failed to load scratch sound effect! SDL_mixer Error: %s\n", Mix_GetError());
 		success = false;
 	}
 
-	if (!gSpriteSheetTexture.loadFromFile(gRenderer, "dots.png"))
+	gHigh = Mix_LoadWAV("high.wav");
+	if (gHigh == NULL)
 	{
-		printf("Failed to load sprite sheet texture!\n");
+		printf("Failed to load high sound effect! SDL_mixer Error: %s\n", Mix_GetError());
 		success = false;
 	}
-	else
+
+	gMedium = Mix_LoadWAV("medium.wav");
+	if (gMedium == NULL)
 	{
-		//Set top left sprite
-		gSpriteClips[0].x = 0;
-		gSpriteClips[0].y = 0;
-		gSpriteClips[0].w = 100;
-		gSpriteClips[0].h = 100;
-
-		//Set top right sprite
-		gSpriteClips[1].x = 100;
-		gSpriteClips[1].y = 0;
-		gSpriteClips[1].w = 100;
-		gSpriteClips[1].h = 100;
-
-		//Set bottom left sprite
-		gSpriteClips[2].x = 0;
-		gSpriteClips[2].y = 100;
-		gSpriteClips[2].w = 100;
-		gSpriteClips[2].h = 100;
-
-		//Set bottom right sprite
-		gSpriteClips[3].x = 100;
-		gSpriteClips[3].y = 100;
-		gSpriteClips[3].w = 100;
-		gSpriteClips[3].h = 100;
+		printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
+		success = false;
 	}
 
-
+	gLow = Mix_LoadWAV("low.wav");
+	if (gLow == NULL)
+	{
+		printf("Failed to load low sound effect! SDL_mixer Error: %s\n", Mix_GetError());
+		success = false;
+	}
 
 
 	return success;
@@ -223,6 +211,19 @@ void close() {
 
 	gFooTexture.free();
 	gBackgroundTexture.free();
+
+
+	Mix_FreeChunk(gScratch);
+	Mix_FreeChunk(gHigh);
+	Mix_FreeChunk(gMedium);
+	Mix_FreeChunk(gLow);
+	gScratch = NULL;
+	gHigh = NULL;
+	gMedium = NULL;
+	gLow = NULL;
+
+	Mix_FreeMusic(gMusic);
+	gMusic = NULL;
 
 	SDL_FreeSurface(gCurrentSurface);
 	gCurrentSurface = NULL;
@@ -237,8 +238,11 @@ void close() {
 	gWindow = NULL;
 	gRenderer = NULL;
 
+
+
 	TTF_Quit();
 	IMG_Quit();
+	Mix_Quit();
 	SDL_Quit();
 }
 
@@ -262,19 +266,38 @@ int main(int argc, char* args[])
 		}
 		else
 		{
+			SDL_Color textColor = { 255,255,255,255 };
+			LButton buttonOne(gRenderer, "lazy.ttf", 20, textColor, "WOW I'M a rendered button");
+			buttonOne.setPosition(200, 200);
+
+			TTF_Font* font = TTF_OpenFont("lazy.ttf", 20);
 
 
-
+			LTexture playerTexture;
+			playerTexture.loadFromRenderedText(gRenderer, "i", textColor, font);
+			
+			Player playerOne(playerTexture);
 
 			bool quit = false;
 			SDL_Event e;
 			//gCurrentSurface = gKeyPressSurface[KEY_PRESS_SURFACE_DEFAULT];
 			
-			
+			Timer timer;
+
+			int countedFrames = 0;
+			timer.start();
+
+			std::stringstream timeText;
 
 
 			while (!quit)
 			{
+				countedFrames++;
+				float avgFPS = countedFrames / (timer.getTicks() / 1000.f);
+				if (avgFPS > 2000000)
+				{
+					avgFPS = 0;
+				}
 
 				while (SDL_PollEvent(&e) != 0)
 				{
@@ -285,6 +308,35 @@ int main(int argc, char* args[])
 					}
 					else if (e.type == SDL_KEYDOWN)
 					{
+
+
+						//Start/stop
+						if (e.key.keysym.sym == SDLK_s)
+						{
+							if (timer.isStarted())
+							{
+								timer.stop();
+							}
+							else
+							{
+								timer.start();
+							}
+						}
+						//Pause/unpause
+						else if (e.key.keysym.sym == SDLK_p)
+						{
+							if (timer.isPaused())
+							{
+								timer.unpause();
+							}
+							else
+							{
+								timer.pause();
+							}
+						}
+
+
+
 						switch (e.key.keysym.sym)
 						{
 						case SDLK_a:
@@ -306,80 +358,68 @@ int main(int argc, char* args[])
 						case SDLK_e:
 							flipType = SDL_FLIP_VERTICAL;
 							break;
+						case SDLK_1:
+							Mix_PlayChannel(-1, gHigh, 0);
+							break;
+						case SDLK_2:
+							Mix_PlayChannel(-1, gMedium, 0);
+							break;
+						case SDLK_3:
+							Mix_PlayChannel(-1, gLow, 0);
+							break;
+						case SDLK_4:
+							Mix_PlayChannel(-1, gScratch, 0);
+							break;
+						case SDLK_9:
+							if (Mix_PlayingMusic() == 0)
+							{
+								Mix_PlayMusic(gMusic, -1);
+							}
+							else
+							{
+								if (Mix_PausedMusic() == 1)
+								{
+									//Resume the music
+									Mix_ResumeMusic();
+								}
+								//If the music is playing
+								else
+								{
+									//Pause the music
+									Mix_PauseMusic();
+								}
+							}
+							break;
+						case SDLK_0:
+							Mix_HaltMusic();
+							Mix_HaltChannel(-1);
+							break;
 						}
+							
+						
 					}
-
 				
-			
-					//gBackgroundTexture.SetColor(100, 200, 0);
+					buttonOne.handleEvent(&e);
+					playerOne.handleEvent(e);
 
-
-					//gBackgroundTexture.setBlendMode(SDL_BLENDMODE_BLEND);
-
-				//	gBackgroundTexture.setAlpha(100);
-
-					SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
-					SDL_RenderClear(gRenderer);
-
-				//	gBackgroundTexture.render(gRenderer,0, 0);
-
-
-					gTextTexture.render(gRenderer, (SCREEN_WIDTH - gTextTexture.getWidth()) / 2, (SCREEN_HEIGHT - gTextTexture.getHeight()) / 2);
-
-					//gFooTexture.render(gRenderer,240, 190, NULL, degrees, NULL, flipType);
-
-					//Render top left sprite
-				//	gSpriteSheetTexture.render(gRenderer,0, 0, &gSpriteClips[0]);
-
-					//Render top right sprite
-				//	gSpriteSheetTexture.render(gRenderer, SCREEN_WIDTH - gSpriteClips[1].w, 0, &gSpriteClips[1]);
-
-					//Render bottom left sprite
-				//	gSpriteSheetTexture.render(gRenderer, 0, SCREEN_HEIGHT - gSpriteClips[2].h, &gSpriteClips[2]);
-
-					//Render bottom right sprite
-				//	gSpriteSheetTexture.render(gRenderer, SCREEN_WIDTH - gSpriteClips[3].w, SCREEN_HEIGHT - gSpriteClips[3].h, &gSpriteClips[3]);
-
-
-					SDL_RenderPresent(gRenderer);
-
-					/*
-					switch (e.key.key)
-					{
-					case SDLK_W:
-						gCurrentSurface = gKeyPressSurface[KEY_PRESS_SURFACE_W];
-						break;
-
-					case SDLK_S:
-						gCurrentSurface = gKeyPressSurface[KEY_PRESS_SURFACE_S];
-						break;
-
-					case SDLK_A:
-						gCurrentSurface = gKeyPressSurface[KEY_PRESS_SURFACE_A];
-						break;
-
-					case SDLK_D:
-						gCurrentSurface = gKeyPressSurface[KEY_PRESS_SURFACE_D];
-						break;
-
-					default:
-						gCurrentSurface = gKeyPressSurface[KEY_PRESS_SURFACE_DEFAULT];
-						break;
-					}
-
-					SDL_Rect stretchRect;
-					stretchRect.x = 0;
-					stretchRect.y = 0;
-					stretchRect.w = SCREEN_WIDTH;
-					stretchRect.h = SCREEN_HEIGHT;
-
-					SDL_BlitSurfaceScaled(gCurrentSurface, NULL, gScreenSurface, &stretchRect, SDL_SCALEMODE_LINEAR);
-
-					//SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, NULL);
-					SDL_UpdateWindowSurface(gWindow);
-					*/
-					
 				}
+
+				playerOne.move();
+
+				timeText.str("");
+				timeText << "Seconds since start time " << avgFPS;
+
+				buttonOne.SetText(gRenderer, timeText.str().c_str());
+
+				SDL_SetRenderDrawColor(gRenderer, 0, 0, 0, 0xFF);
+				SDL_RenderClear(gRenderer);
+
+
+			
+		
+				buttonOne.render(gRenderer);
+				playerOne.render(gRenderer);
+				SDL_RenderPresent(gRenderer);
 			}
 		}
 
