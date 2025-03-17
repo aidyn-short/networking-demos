@@ -15,37 +15,19 @@
 
 SDL_Window* gWindow = NULL;
 
-SDL_Surface* gScreenSurface = NULL;
 
-SDL_Surface* gCurrentSurface = NULL;
+const int LEVEL_WIDTH = 1280;
+const int LEVEL_HEIGHT = 960;
 
 const int SCREEN_HEIGHT = 480;
 const int SCREEN_WIDTH = 640;
 
-SDL_Surface* gPNGSurface = NULL;
+
+SDL_Rect camera = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
 
 
-
-enum KeyPressSurfaces 
-{
-	KEY_PRESS_SURFACE_DEFAULT,
-	KEY_PRESS_SURFACE_W,
-	KEY_PRESS_SURFACE_S,
-	KEY_PRESS_SURFACE_A,
-	KEY_PRESS_SURFACE_D,
-	KEY_PRESS_SURFACE_TOTAL
-};
-
-
-SDL_Surface* gKeyPressSurface[KEY_PRESS_SURFACE_TOTAL];
-
-//The window renderer
 SDL_Renderer* gRenderer = NULL;
 
-//Current displayed texture
-SDL_Texture* gTexture = NULL;
-
-LTexture gFooTexture;
 
 LTexture gBackgroundTexture;
 
@@ -149,7 +131,7 @@ bool init() {
 
 			}
 
-			gScreenSurface = SDL_GetWindowSurface(gWindow);
+		
 		}
 
 	}
@@ -162,6 +144,12 @@ bool init() {
 bool loadMedia() {
 
 	bool success = true;
+
+
+	if (!gBackgroundTexture.loadFromFile(gRenderer, "bg.png")) {
+		std::cout << "Failed to load background";
+	}
+
 
 
 	gMusic = Mix_LoadMUS("beat.wav");
@@ -209,9 +197,6 @@ bool loadMedia() {
 
 void close() {
 
-	gFooTexture.free();
-	gBackgroundTexture.free();
-
 
 	Mix_FreeChunk(gScratch);
 	Mix_FreeChunk(gHigh);
@@ -225,10 +210,7 @@ void close() {
 	Mix_FreeMusic(gMusic);
 	gMusic = NULL;
 
-	SDL_FreeSurface(gCurrentSurface);
-	gCurrentSurface = NULL;
-	SDL_DestroyTexture(gTexture);
-	gTexture = NULL;
+
 
 	TTF_CloseFont(gFont);
 	gFont = NULL;
@@ -406,6 +388,27 @@ int main(int argc, char* args[])
 
 				playerOne.move();
 
+
+				camera.x = (playerOne.getPosX() + Player::Player_WIDTH / 2) - SCREEN_WIDTH / 2;
+				camera.y = (playerOne.getPosY() + Player::Player_HEIGHT / 2) - SCREEN_HEIGHT / 2;
+
+				if (camera.x < 0)
+				{
+					camera.x = 0;
+				}
+				if (camera.y < 0)
+				{
+					camera.y = 0;
+				}
+				if (camera.x > LEVEL_WIDTH - camera.w)
+				{
+					camera.x = LEVEL_WIDTH - camera.w;
+				}
+				if (camera.y > LEVEL_HEIGHT - camera.h)
+				{
+					camera.y = LEVEL_HEIGHT - camera.h;
+				}
+
 				timeText.str("");
 				timeText << "Seconds since start time " << avgFPS;
 
@@ -415,10 +418,11 @@ int main(int argc, char* args[])
 				SDL_RenderClear(gRenderer);
 
 
-			
-		
-				buttonOne.render(gRenderer);
-				playerOne.render(gRenderer);
+				gBackgroundTexture.render(gRenderer, 0, 0, &camera);
+				
+				SDL_Point cameraPos = { camera.x, camera.y };
+				//buttonOne.render(gRenderer);
+				playerOne.render(gRenderer,cameraPos);
 				SDL_RenderPresent(gRenderer);
 			}
 		}

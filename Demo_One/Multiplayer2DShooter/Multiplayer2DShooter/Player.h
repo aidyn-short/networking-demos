@@ -23,7 +23,12 @@ public:
     void move();
 
     //Shows the Player on the screen
-    void render(SDL_Renderer* renderer);
+    void render(SDL_Renderer* renderer, SDL_Point camPos);
+
+    int getPosX();
+    int getPosY();
+
+
 
 private:
     //The X and Y offsets of the Player

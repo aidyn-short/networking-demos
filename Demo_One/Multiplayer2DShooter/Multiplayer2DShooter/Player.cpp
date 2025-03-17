@@ -52,7 +52,7 @@ void Player::move()
     mPosX += mVelX;
 
     //If the dot went too far to the left or right
-    if ((mPosX < 0) || (mPosX + Player_WIDTH > 640))
+    if ((mPosX < 0) || (mPosX + Player_WIDTH > 1280) )
     {
         //Move back
         mPosX -= mVelX;
@@ -61,15 +61,27 @@ void Player::move()
     mPosY += mVelY;
 
     //If the dot went too far up or down
-    if ((mPosY < 0) || (mPosY + Player_HEIGHT > 480))
+    if ((mPosY < 0) || (mPosY + Player_HEIGHT > 960))
     {
         //Move back
         mPosY -= mVelY;
     }
 }
 
-void Player::render(SDL_Renderer* renderer)
+
+
+int Player::getPosX()
+{
+    return mPosX;
+}
+
+int Player::getPosY()
+{
+    return mPosY;
+}
+
+void Player::render(SDL_Renderer* renderer, SDL_Point camPos)
 {
 
-    playerTexture.render(renderer, mPosX, mPosY);
+    playerTexture.render(renderer, mPosX - camPos.x, mPosY - camPos.y);
 }
