@@ -134,6 +134,7 @@
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameScene.h" />
     <ClInclude Include="LButton.h" />
     <ClInclude Include="LTexture.h" />
     <ClInclude Include="MenuScene.h" />

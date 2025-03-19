@@ -33,47 +33,10 @@ LTexture gBackgroundTexture;
 
 
 
-SDL_Rect gSpriteClips[4];
-LTexture gSpriteSheetTexture;
-
-//Angle of rotation
-double degrees = 0;
-
-//Flip type
-SDL_RendererFlip flipType = SDL_FLIP_NONE;
-
-TTF_Font* gFont = NULL;
-
-LTexture gTextTexture;
-
-//The music that will be played
-Mix_Music* gMusic = NULL;
-
-//The sound effects that will be used
-Mix_Chunk* gScratch = NULL;
-Mix_Chunk* gHigh = NULL;
-Mix_Chunk* gMedium = NULL;
-Mix_Chunk* gLow = NULL;
-
-
-
-
-enum LButtonSprite
-{
-	BUTTON_SPRITE_MOUSE_OUT = 0,
-	BUTTON_SPRITE_MOUSE_OVER_MOTION = 1,
-	BUTTON_SPRITE_MOUSE_DOWN = 2,
-	BUTTON_SPRITE_MOUSE_UP = 3,
-	BUTTON_SPRITE_TOTAL = 4
-};
-
 
 bool init() {
 
 	bool success = true;
-
-
-	
 
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
@@ -141,79 +104,13 @@ bool init() {
 }
 
 
-bool loadMedia() {
 
-	bool success = true;
-
-
-	if (!gBackgroundTexture.loadFromFile(gRenderer, "bg.png")) {
-		std::cout << "Failed to load background";
-	}
-
-
-
-	gMusic = Mix_LoadMUS("beat.wav");
-	if (gMusic == NULL)
-	{
-		printf("Failed to load beat music! SDL_mixer Error: %s\n", Mix_GetError());
-		success = false;
-	}
-
-	//Load sound effects
-	gScratch = Mix_LoadWAV("scratch.wav");
-	if (gScratch == NULL)
-	{
-		printf("Failed to load scratch sound effect! SDL_mixer Error: %s\n", Mix_GetError());
-		success = false;
-	}
-
-	gHigh = Mix_LoadWAV("high.wav");
-	if (gHigh == NULL)
-	{
-		printf("Failed to load high sound effect! SDL_mixer Error: %s\n", Mix_GetError());
-		success = false;
-	}
-
-	gMedium = Mix_LoadWAV("medium.wav");
-	if (gMedium == NULL)
-	{
-		printf("Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError());
-		success = false;
-	}
-
-	gLow = Mix_LoadWAV("low.wav");
-	if (gLow == NULL)
-	{
-		printf("Failed to load low sound effect! SDL_mixer Error: %s\n", Mix_GetError());
-		success = false;
-	}
-
-
-	return success;
-
-
-}
 
 
 void close() {
 
 
-	Mix_FreeChunk(gScratch);
-	Mix_FreeChunk(gHigh);
-	Mix_FreeChunk(gMedium);
-	Mix_FreeChunk(gLow);
-	gScratch = NULL;
-	gHigh = NULL;
-	gMedium = NULL;
-	gLow = NULL;
 
-	Mix_FreeMusic(gMusic);
-	gMusic = NULL;
-
-
-
-	TTF_CloseFont(gFont);
-	gFont = NULL;
 
 	SDL_DestroyWindow(gWindow);
 	SDL_DestroyRenderer(gRenderer);
@@ -242,12 +139,8 @@ int main(int argc, char* args[])
 	}
 	else 
 	{
-		if (!loadMedia())
-		{
-			std::cout << "Failed to load media";
-		}
-		else
-		{
+		
+		
 			SDL_Color textColor = { 255,255,255,255 };
 			LButton buttonOne(gRenderer, "lazy.ttf", 20, textColor, "WOW I'M a rendered button");
 			buttonOne.setPosition(200, 200);
@@ -316,72 +209,11 @@ int main(int argc, char* args[])
 								timer.pause();
 							}
 						}
-
-
-
-						switch (e.key.keysym.sym)
-						{
-						case SDLK_a:
-							degrees -= 60;
-							break;
-
-						case SDLK_d:
-							degrees += 60;
-							break;
-
-						case SDLK_q:
-							flipType = SDL_FLIP_HORIZONTAL;
-							break;
-
-						case SDLK_w:
-							flipType = SDL_FLIP_NONE;
-							break;
-
-						case SDLK_e:
-							flipType = SDL_FLIP_VERTICAL;
-							break;
-						case SDLK_1:
-							Mix_PlayChannel(-1, gHigh, 0);
-							break;
-						case SDLK_2:
-							Mix_PlayChannel(-1, gMedium, 0);
-							break;
-						case SDLK_3:
-							Mix_PlayChannel(-1, gLow, 0);
-							break;
-						case SDLK_4:
-							Mix_PlayChannel(-1, gScratch, 0);
-							break;
-						case SDLK_9:
-							if (Mix_PlayingMusic() == 0)
-							{
-								Mix_PlayMusic(gMusic, -1);
-							}
-							else
-							{
-								if (Mix_PausedMusic() == 1)
-								{
-									//Resume the music
-									Mix_ResumeMusic();
-								}
-								//If the music is playing
-								else
-								{
-									//Pause the music
-									Mix_PauseMusic();
-								}
-							}
-							break;
-						case SDLK_0:
-							Mix_HaltMusic();
-							Mix_HaltChannel(-1);
-							break;
-						}
 							
 						
 					}
 				
-					buttonOne.handleEvent(&e);
+
 					playerOne.handleEvent(e);
 
 				}
@@ -425,7 +257,7 @@ int main(int argc, char* args[])
 				playerOne.render(gRenderer,cameraPos);
 				SDL_RenderPresent(gRenderer);
 			}
-		}
+		
 
 	}
 

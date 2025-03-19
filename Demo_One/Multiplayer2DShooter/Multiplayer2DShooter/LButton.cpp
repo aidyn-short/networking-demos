@@ -130,4 +130,8 @@ void LButton::render(SDL_Renderer* renderer)
 
 	texture.render(renderer,mPosition.x, mPosition.y);
 
+	TTF_CloseFont(font);
+	font = NULL;
+
+
 }
