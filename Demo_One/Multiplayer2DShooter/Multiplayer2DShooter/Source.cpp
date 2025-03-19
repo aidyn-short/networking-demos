@@ -19,8 +19,8 @@ SDL_Window* gWindow = NULL;
 const int LEVEL_WIDTH = 1280;
 const int LEVEL_HEIGHT = 960;
 
-const int SCREEN_HEIGHT = 480;
-const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 1080/2;
+const int SCREEN_WIDTH = 1920/2;
 
 
 SDL_Rect camera = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
