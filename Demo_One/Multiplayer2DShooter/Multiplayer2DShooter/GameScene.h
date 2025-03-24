@@ -11,7 +11,7 @@ private:
 
 
 	// Inherited via Scene
-	void Init() override;
+	void Init(SDL_Renderer* renderer) override;
 
 	void Update(float deltaTime) override;
 
@@ -29,7 +29,7 @@ GameScene::~GameScene()
 {
 }
 
-void GameScene::Init()
+void GameScene::Init(SDL_Renderer* renderer)
 {
 }
 

@@ -12,10 +12,10 @@ public:
 	SceneManager() {}
 	~SceneManager() {}
 
-	void ChangeScene(Scene* newScene) {
+	void ChangeScene(Scene* newScene, SDL_Renderer* renderer) {
 		if (currentScene) delete currentScene;
 		currentScene = newScene;
-		currentScene->Init();
+		currentScene->Init(renderer);
 	}
 
 	void Update(float deltaTime) { if (currentScene) currentScene->Update(deltaTime); }

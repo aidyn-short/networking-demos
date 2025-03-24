@@ -5,13 +5,15 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
-#include "LTexture.h"
+#include "Texture.h"
 #include <cmath>
-#include "LButton.h"
+#include "Button.h"
 #include <SDL2/SDL_mixer.h>
 #include "Timer.h"
 #include <sstream>
 #include "Player.h"
+#include "SceneManager.h"
+#include "MenuScene.h"
 
 SDL_Window* gWindow = NULL;
 
@@ -19,18 +21,17 @@ SDL_Window* gWindow = NULL;
 const int LEVEL_WIDTH = 1280;
 const int LEVEL_HEIGHT = 960;
 
-const int SCREEN_HEIGHT = 1080/2;
-const int SCREEN_WIDTH = 1920/2;
 
 
 SDL_Rect camera = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
 
 
-SDL_Renderer* gRenderer = NULL;
+SDL_Renderer* renderer = NULL;
 
 
-LTexture gBackgroundTexture;
+Texture gBackgroundTexture;
 
+SceneManager sceneManager;
 
 
 
@@ -60,15 +61,15 @@ bool init() {
 		}
 		else
 		{
-			gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-			if (gRenderer == NULL)
+			renderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+			if (renderer == NULL)
 			{
 				std::cout << "Failed to create renderer";
 				success = false;
 			}
 			else
 			{
-				SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+				SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
 
 
@@ -113,9 +114,9 @@ void close() {
 
 
 	SDL_DestroyWindow(gWindow);
-	SDL_DestroyRenderer(gRenderer);
+	SDL_DestroyRenderer(renderer);
 	gWindow = NULL;
-	gRenderer = NULL;
+	renderer = NULL;
 
 
 
@@ -137,18 +138,46 @@ int main(int argc, char* args[])
 	{
 		std::cout << "Failed to init";
 	}
-	else 
+	else
 	{
-		
-		
+		MenuScene* menu = new MenuScene();
+		sceneManager.ChangeScene(menu, renderer);
+
+		bool quit = false;
+		SDL_Event e;
+		while (!quit)
+		{
+			while (SDL_PollEvent(&e) != 0)
+			{
+				if (e.type == SDL_QUIT)
+				{
+					quit = true;
+					std::cout << "QUIT";
+				}
+				
+				sceneManager.HandleEvent(e);
+			}
+
+			sceneManager.Render(renderer);
+
+
+		}
+
+	}
+	close();
+}
+
+
+
+	/*
 			SDL_Color textColor = { 255,255,255,255 };
-			LButton buttonOne(gRenderer, "lazy.ttf", 20, textColor, "WOW I'M a rendered button");
+			Button buttonOne(gRenderer, "lazy.ttf", 20, textColor, "WOW I'M a rendered button");
 			buttonOne.setPosition(200, 200);
 
 			TTF_Font* font = TTF_OpenFont("lazy.ttf", 20);
 
 
-			LTexture playerTexture;
+			Texture playerTexture;
 			playerTexture.loadFromRenderedText(gRenderer, "i", textColor, font);
 			
 			Player playerOne(playerTexture);
@@ -266,4 +295,4 @@ int main(int argc, char* args[])
 	
 
 	return 0;
-}
+}*/

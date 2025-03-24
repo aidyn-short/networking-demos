@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(LTexture& playerTexture)
+Player::Player(Texture& playerTexture)
 {
     //Initialize the offsets
     mPosX = 0;

@@ -127,16 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="LButton.cpp" />
-    <ClCompile Include="LTexture.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameScene.h" />
-    <ClInclude Include="LButton.h" />
-    <ClInclude Include="LTexture.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scene.h" />

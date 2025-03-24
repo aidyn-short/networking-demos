@@ -1,6 +1,6 @@
 #pragma once
 #include <SDL2/SDL.h>
-#include "LTexture.h"
+#include "Texture.h"
 
 
 class Player
@@ -14,7 +14,7 @@ public:
     static const int Player_VEL = 10;
 
     //Initializes the variables
-    Player(LTexture& playerTexture);
+    Player(Texture& playerTexture);
 
     //Takes key presses and adjusts the Player's velocity
     void handleEvent(SDL_Event& e);
@@ -37,5 +37,5 @@ private:
     //The velocity of the Player
     int mVelX, mVelY;
 
-    LTexture playerTexture;
+    Texture playerTexture;
 };
