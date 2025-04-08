@@ -124,14 +124,13 @@ void Button::render(SDL_Renderer* renderer)
 {
 
 
-	SDL_Rect fillRect = { mPosition.x, mPosition.y, width, height};
+	SDL_Rect fillRect = { mPosition.x + texture.getWidth()/2 - width/2, mPosition.y + texture.getHeight()/2 - height/2, width, height};
 	SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
 	SDL_RenderFillRect(renderer, &fillRect);
 
 	texture.render(renderer,mPosition.x, mPosition.y);
 
-	TTF_CloseFont(font);
-	font = NULL;
+
 
 
 }
