@@ -10,14 +10,16 @@ public:
 private:
 
 
-	// Inherited via Scene
-	void Init(SDL_Renderer* renderer) override;
-
+	
 	void Update(float deltaTime) override;
 
 	void Render(SDL_Renderer* renderer) override;
 
 	void HandleEvent(SDL_Event& event) override;
+
+
+	// Inherited via Scene
+	void Init(SDL_Renderer* renderer, SceneManager* manager) override;
 
 };
 
@@ -29,9 +31,7 @@ GameScene::~GameScene()
 {
 }
 
-void GameScene::Init(SDL_Renderer* renderer)
-{
-}
+
 
 void GameScene::Update(float deltaTime)
 {
@@ -39,8 +39,15 @@ void GameScene::Update(float deltaTime)
 
 void GameScene::Render(SDL_Renderer* renderer)
 {
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+	SDL_RenderClear(renderer);
+
 }
 
 void GameScene::HandleEvent(SDL_Event& event)
+{
+}
+
+void GameScene::Init(SDL_Renderer* renderer, SceneManager* manager)
 {
 }

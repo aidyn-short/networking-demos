@@ -15,7 +15,7 @@ public:
 	void ChangeScene(Scene* newScene, SDL_Renderer* renderer) {
 		if (currentScene) delete currentScene;
 		currentScene = newScene;
-		currentScene->Init(renderer);
+		currentScene->Init(renderer, this);
 	}
 
 	void Update(float deltaTime) { if (currentScene) currentScene->Update(deltaTime); }

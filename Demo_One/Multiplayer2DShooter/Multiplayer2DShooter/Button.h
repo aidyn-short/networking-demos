@@ -2,6 +2,7 @@
 #include <SDL2/SDL.h>
 #include "Texture.h"
 #include <SDL2/SDL_ttf.h>
+#include <functional>
 
 struct  vector4
 {
@@ -18,7 +19,7 @@ class Button
 {
 public:
     //Initializes internal variables
-    Button(SDL_Renderer* renderer, std::string fontName, int fontSize, SDL_Color textColor, std::string text);
+    Button(SDL_Renderer* renderer, std::string fontName, int fontSize, SDL_Color textColor, std::string text, std::function<void()> event = NULL);
 
     ~Button()
     {
@@ -46,19 +47,23 @@ public:
     int getWidth() { return width; }
     int getHeight() { return height; }
 
+    void backgroundColor(SDL_Color color) { this->color = color; }
+
 
 
 private:
     //Top left position
     SDL_Point mPosition;
 
-    
+    std::function<void()> event;
+
     Texture texture;
 
     int width = 300;
     int height = 100;
 
-    vector4 color = { 0,0,0,255 };
+    SDL_Color color = { 0,0,0,255 };
+    SDL_Color tempColor = { 0,0,0,255 };
 
     TTF_Font* font;
     SDL_Color textColor;

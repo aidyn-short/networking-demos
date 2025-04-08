@@ -6,8 +6,9 @@
 
 
 
-Button::Button(SDL_Renderer* renderer,std::string fontName, int fontSize, SDL_Color textColor, std::string text)
+Button::Button(SDL_Renderer* renderer,std::string fontName, int fontSize, SDL_Color textColor, std::string text, std::function<void()> event)
 {
+	this->event = event;
 	mPosition.x = 0;
 	mPosition.y = 0;
 
@@ -86,7 +87,7 @@ void Button::handleEvent(SDL_Event* e)
 
 		if (!inside)
 		{
-			color = { 255,0,0, 255 };
+			tempColor = color;
 		
 			
 		}
@@ -95,15 +96,17 @@ void Button::handleEvent(SDL_Event* e)
 			switch (e->type)
 			{
 			case SDL_MOUSEMOTION:
-				color = { 0,255,0, 255 };
+				tempColor = color;
 				break;
 
 			case SDL_MOUSEBUTTONDOWN:
-				color = { 0,0,255, 255 };
+				tempColor = color;
+			
 				break;
 
 			case SDL_MOUSEBUTTONUP:
-				color = { 0,0,0, 255 };
+				tempColor = color;
+				event();
 				break;
 
 
@@ -125,7 +128,7 @@ void Button::render(SDL_Renderer* renderer)
 
 
 	SDL_Rect fillRect = { mPosition.x + texture.getWidth()/2 - width/2, mPosition.y + texture.getHeight()/2 - height/2, width, height};
-	SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
+	SDL_SetRenderDrawColor(renderer, tempColor.r, tempColor.g, tempColor.b, tempColor.a);
 	SDL_RenderFillRect(renderer, &fillRect);
 
 	texture.render(renderer,mPosition.x, mPosition.y);
