@@ -18,12 +18,10 @@
 SDL_Window* gWindow = NULL;
 
 
-const int LEVEL_WIDTH = 1280;
-const int LEVEL_HEIGHT = 960;
 
 
 
-SDL_Rect camera = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
+
 
 
 SDL_Renderer* renderer = NULL;
@@ -157,7 +155,7 @@ int main(int argc, char* args[])
 				
 				sceneManager.HandleEvent(e);
 			}
-
+			sceneManager.Update(1);
 			sceneManager.Render(renderer);
 
 			SDL_RenderPresent(renderer);

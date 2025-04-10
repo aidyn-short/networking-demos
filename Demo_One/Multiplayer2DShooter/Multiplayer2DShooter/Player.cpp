@@ -12,16 +12,18 @@ Player::Player(Texture& playerTexture)
 
     this->playerTexture = playerTexture;
 
+    GameObjectRegistry::Get().Add(this);
+
 }
 
-void Player::handleEvent(SDL_Event& e)
+void Player::HandleEvent(SDL_Event& event) 
 {
 
     //If a key was pressed
-    if (e.type == SDL_KEYDOWN && e.key.repeat == 0)
+    if (event.type == SDL_KEYDOWN && event.key.repeat == 0)
     {
         //Adjust the velocity
-        switch (e.key.keysym.sym)
+        switch (event.key.keysym.sym)
         {
         case SDLK_UP: mVelY -= Player_VEL; break;
         case SDLK_DOWN: mVelY += Player_VEL; break;
@@ -30,10 +32,10 @@ void Player::handleEvent(SDL_Event& e)
         }
     }
     //If a key was released
-    else if (e.type == SDL_KEYUP && e.key.repeat == 0)
+    else if (event.type == SDL_KEYUP && event.key.repeat == 0)
     {
         //Adjust the velocity
-        switch (e.key.keysym.sym)
+        switch (event.key.keysym.sym)
         {
         case SDLK_UP: mVelY += Player_VEL; break;
         case SDLK_DOWN: mVelY -= Player_VEL; break;
@@ -46,7 +48,7 @@ void Player::handleEvent(SDL_Event& e)
 
 }
 
-void Player::move()
+void Player::Update(float deltaTime)
 {
     //Move the dot left or right
     mPosX += mVelX;
@@ -80,7 +82,7 @@ int Player::getPosY()
     return mPosY;
 }
 
-void Player::render(SDL_Renderer* renderer, SDL_Point camPos)
+void Player::Render(SDL_Renderer* renderer, SDL_Point camPos)
 {
 
     playerTexture.render(renderer, mPosX - camPos.x, mPosY - camPos.y);

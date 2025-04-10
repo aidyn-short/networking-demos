@@ -7,12 +7,6 @@
 #include "Text.h"
 #include "GameScene.h"
 
-Texture menuBackground;
-Text* titleText = NULL;
-Button* startButton = NULL;
-Button* exitButton = NULL;
-SDL_Rect titleBackground = { 300, 200, 200, 200 };
-
 
 
 
@@ -38,6 +32,12 @@ private:
 
 	SceneManager* manager = NULL;
 
+	Texture menuBackground;
+	Text* titleText = NULL;
+	Button* startButton = NULL;
+	Button* exitButton = NULL;
+	SDL_Rect titleBackground = { 300, 200, 200, 200 };
+
 
 
 };
@@ -50,6 +50,14 @@ MenuScene::MenuScene()
 
 MenuScene::~MenuScene()
 {
+	delete startButton;
+	startButton = NULL;
+	delete exitButton;
+	exitButton = NULL;
+	delete titleText;
+	titleText = NULL;
+	manager = NULL;
+
 }
 
 
@@ -103,7 +111,8 @@ void MenuScene::Render(SDL_Renderer* renderer)
 
 void MenuScene::HandleEvent(SDL_Event& event)
 {
-	startButton->handleEvent(&event);
+
 	exitButton->handleEvent(&event);
+	startButton->handleEvent(&event);
 }
 

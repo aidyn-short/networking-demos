@@ -1,9 +1,10 @@
 #pragma once
 #include <SDL2/SDL.h>
 #include "Texture.h"
+#include "GameObject.h"
+#include "GameObjectRegistry.h"
 
-
-class Player
+class Player : public GameObject
 {
 public:
     //The dimensions of the Player
@@ -17,13 +18,13 @@ public:
     Player(Texture& playerTexture);
 
     //Takes key presses and adjusts the Player's velocity
-    void handleEvent(SDL_Event& e);
+    void HandleEvent(SDL_Event& event) override;
 
     //Moves the Player
-    void move();
+    void Update(float deltaTime) override;
 
     //Shows the Player on the screen
-    void render(SDL_Renderer* renderer, SDL_Point camPos);
+    void Render(SDL_Renderer* renderer, SDL_Point camPos) override;
 
     int getPosX();
     int getPosY();
