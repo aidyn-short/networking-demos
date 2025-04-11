@@ -26,17 +26,19 @@ public:
     //Shows the Player on the screen
     void Render(SDL_Renderer* renderer, SDL_Point camPos) override;
 
+    bool HandleCollision(GameObject* collidingObject) override;
+
     int getPosX();
     int getPosY();
 
 
 
 private:
-    //The X and Y offsets of the Player
-    int mPosX, mPosY;
+
 
     //The velocity of the Player
-    int mVelX, mVelY;
+    int velX,velY;
 
-    Texture playerTexture;
+    bool solidCollision = false;
+
 };

@@ -2,7 +2,7 @@
 #include <SDL2/sdl.h>
 #include "Texture.h"
 #include "GameObject.h"
-
+#include "GameObjectRegistry.h"
 
 class Wall : public GameObject
 {
@@ -10,21 +10,23 @@ public:
 	Wall(SDL_Renderer* renderer, int posX, int posY, float angle, std::string textureName);
 	~Wall();
 
-private:
 
-	SDL_Rect collision;
-	Texture texture;
-	int posX, posY;
-	float angle;
-
-
+	void Render(SDL_Renderer* renderer, SDL_Point camPos) override;
 
 	// Inherited via GameObject
 	void Update(float deltaTime) override;
 
-	void Render(SDL_Renderer* renderer, SDL_Point camPos) override;
-
 	void HandleEvent(SDL_Event& event) override;
+
+	bool HandleCollision(GameObject* collidingObject) override;
+private:
+
+
+
+
+
+
+	
 
 };
 
@@ -38,21 +40,29 @@ Wall::Wall(SDL_Renderer* renderer, int posX, int posY, float angle, std::string 
 	this->texture.loadFromFile(renderer, textureName);
 	collision = { posX, posY, texture.getWidth(), texture.getHeight() };
 	this->angle = angle;
+	GameObjectRegistry::Get().Add(this);
+
 }
 
 Wall::~Wall()
 {
 }
 
-void Wall::Update(float deltaTime)
-{
-}
 
 void Wall::Render(SDL_Renderer* renderer, SDL_Point camPos)
 {
 	texture.render(renderer, posX - camPos.x, posY - camPos.y, NULL, angle);
 }
 
+void Wall::Update(float deltaTime)
+{
+}
+
 void Wall::HandleEvent(SDL_Event& event)
 {
+}
+
+bool Wall::HandleCollision(GameObject* collidingObject)
+{
+	return false;
 }

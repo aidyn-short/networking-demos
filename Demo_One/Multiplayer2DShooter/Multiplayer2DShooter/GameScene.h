@@ -1,7 +1,7 @@
 #pragma once
 #include "Scene.h"
 #include "Player.h"
-
+#include "Wall.h"
 
 
 
@@ -31,7 +31,7 @@ private:
 	Player* playerOne = NULL;
 	SDL_Rect camera = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
 	Texture* background = NULL;
-
+	Wall* wallOne = NULL;
 
 };
 
@@ -54,6 +54,10 @@ void GameScene::Init(SDL_Renderer* renderer, SceneManager* manager)
 	playerOne = new Player(*playerTexture);
 
 
+	wallOne = new Wall(renderer, 400, 400, 0, "left.bmp");
+
+
+
 }
 
 
@@ -61,7 +65,7 @@ void GameScene::Init(SDL_Renderer* renderer, SceneManager* manager)
 void GameScene::Update(float deltaTime)
 {
 
-	
+
 
 	GameObjectRegistry::Get().UpdateAll(deltaTime);
 
@@ -100,6 +104,7 @@ void GameScene::Render(SDL_Renderer* renderer)
 
 	background->render(renderer,-100 - camera.x,-100 - camera.y);
 
+	wallOne->Render(renderer, SDL_Point{ camera.x, camera.y });
 	playerOne->Render(renderer, SDL_Point{camera.x, camera.y});
 }
 

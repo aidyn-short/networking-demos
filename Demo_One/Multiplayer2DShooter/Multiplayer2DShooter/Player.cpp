@@ -3,14 +3,18 @@
 Player::Player(Texture& playerTexture)
 {
     //Initialize the offsets
-    mPosX = 0;
-    mPosY = 0;
+    posX = 0;
+    posY = 0;
 
     //Initialize the velocity
-    mVelX = 0;
-    mVelY = 0;
+    velX = 0;
+    velY = 0;
 
-    this->playerTexture = playerTexture;
+    this->texture = playerTexture;
+
+    collision.w = playerTexture.getWidth();
+    collision.h = playerTexture.getHeight();
+
 
     GameObjectRegistry::Get().Add(this);
 
@@ -25,10 +29,10 @@ void Player::HandleEvent(SDL_Event& event)
         //Adjust the velocity
         switch (event.key.keysym.sym)
         {
-        case SDLK_UP: mVelY -= Player_VEL; break;
-        case SDLK_DOWN: mVelY += Player_VEL; break;
-        case SDLK_LEFT: mVelX -= Player_VEL; break;
-        case SDLK_RIGHT: mVelX += Player_VEL; break;
+        case SDLK_UP: velY -= Player_VEL; break;
+        case SDLK_DOWN: velY += Player_VEL; break;
+        case SDLK_LEFT: velX -= Player_VEL; break;
+        case SDLK_RIGHT: velX += Player_VEL; break;
         }
     }
     //If a key was released
@@ -37,10 +41,10 @@ void Player::HandleEvent(SDL_Event& event)
         //Adjust the velocity
         switch (event.key.keysym.sym)
         {
-        case SDLK_UP: mVelY += Player_VEL; break;
-        case SDLK_DOWN: mVelY -= Player_VEL; break;
-        case SDLK_LEFT: mVelX += Player_VEL; break;
-        case SDLK_RIGHT: mVelX -= Player_VEL; break;
+        case SDLK_UP: velY += Player_VEL; break;
+        case SDLK_DOWN: velY -= Player_VEL; break;
+        case SDLK_LEFT: velX += Player_VEL; break;
+        case SDLK_RIGHT: velX -= Player_VEL; break;
         }
     }
 
@@ -51,39 +55,57 @@ void Player::HandleEvent(SDL_Event& event)
 void Player::Update(float deltaTime)
 {
     //Move the dot left or right
-    mPosX += mVelX;
+    posX += velX;
+ 
+    bool colliding = solidCollision;
 
     //If the dot went too far to the left or right
-    if ((mPosX < 0) || (mPosX + Player_WIDTH > 1280) )
+    if ((posX < 0) || (posX + Player_WIDTH > 1280)  || colliding)
     {
         //Move back
-        mPosX -= mVelX;
+    posX -= velX* 2;
+    solidCollision = false;
     }
 
-    mPosY += mVelY;
+    posY += velY;
 
     //If the dot went too far up or down
-    if ((mPosY < 0) || (mPosY + Player_HEIGHT > 960))
+    if ((posY < 0) || (posY + Player_HEIGHT > 960) || colliding)
     {
         //Move back
-        mPosY -= mVelY;
+    posY -= velY * 2;
+    solidCollision = false;
     }
+
+
+
+    collision.x = posX;
+    collision.y = posY;
+
+
 }
 
 
 
 int Player::getPosX()
 {
-    return mPosX;
+    return posX;
 }
 
 int Player::getPosY()
 {
-    return mPosY;
+    return posY;
 }
 
 void Player::Render(SDL_Renderer* renderer, SDL_Point camPos)
 {
 
-    playerTexture.render(renderer, mPosX - camPos.x, mPosY - camPos.y);
+    texture.render(renderer, posX - camPos.x, posY - camPos.y);
+}
+
+bool Player::HandleCollision(GameObject* collidingObject)
+{
+    solidCollision = true;
+
+    return false;
 }

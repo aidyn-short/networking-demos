@@ -1,6 +1,10 @@
-﻿  Button.cpp
-  Source.cpp
-  Generating Code...
+﻿  Player.cpp
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(98,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(106,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  (compiling source file 'Player.cpp')
+  
   Multiplayer2DShooter.vcxproj -> C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\x64\Debug\Multiplayer2DShooter.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
