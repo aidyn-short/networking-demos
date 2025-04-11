@@ -1,5 +1,7 @@
 #include "Player.h"
 
+
+
 Player::Player(Texture& playerTexture)
 {
     //Initialize the offsets
@@ -48,8 +50,8 @@ void Player::HandleEvent(SDL_Event& event)
         }
     }
 
-    collision.x += velX;
-    collision.y += velY;
+    collision.x += velX * Time::Get().GetDeltaTime();
+    collision.y += velY * Time::Get().GetDeltaTime();
 
  
 

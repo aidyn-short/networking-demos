@@ -74,5 +74,8 @@
     <ClInclude Include="GameObjectRegistry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -145,6 +145,8 @@ int main(int argc, char* args[])
 		SDL_Event e;
 		while (!quit)
 		{
+			Time::Get().Update();
+
 			while (SDL_PollEvent(&e) != 0)
 			{
 				if (e.type == SDL_QUIT)
@@ -155,7 +157,7 @@ int main(int argc, char* args[])
 				
 				sceneManager.HandleEvent(e);
 			}
-			sceneManager.Update(1);
+			sceneManager.Update(Time::Get().GetDeltaTime());
 			sceneManager.Render(renderer);
 
 			SDL_RenderPresent(renderer);
