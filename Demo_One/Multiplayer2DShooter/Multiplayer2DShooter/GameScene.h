@@ -106,6 +106,11 @@ void GameScene::Render(SDL_Renderer* renderer)
 
 	wallOne->Render(renderer, SDL_Point{ camera.x, camera.y });
 	playerOne->Render(renderer, SDL_Point{camera.x, camera.y});
+
+
+
+
+
 }
 
 void GameScene::HandleEvent(SDL_Event& event)

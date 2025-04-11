@@ -48,39 +48,46 @@ void Player::HandleEvent(SDL_Event& event)
         }
     }
 
+    collision.x += velX;
+    collision.y += velY;
 
+ 
 
 }
 
 void Player::Update(float deltaTime)
 {
     //Move the dot left or right
-    posX += velX;
+
+
+
  
     bool colliding = solidCollision;
-
+    posX += velX * deltaTime;
     //If the dot went too far to the left or right
     if ((posX < 0) || (posX + Player_WIDTH > 1280)  || colliding)
     {
         //Move back
-    posX -= velX* 2;
+        posX -= velX * deltaTime;
+
     solidCollision = false;
     }
 
-    posY += velY;
 
+    posY += velY * deltaTime;
     //If the dot went too far up or down
     if ((posY < 0) || (posY + Player_HEIGHT > 960) || colliding)
     {
         //Move back
-    posY -= velY * 2;
+        posY -= velY * deltaTime;
+
     solidCollision = false;
     }
 
-
-
     collision.x = posX;
     collision.y = posY;
+
+  
 
 
 }
@@ -106,6 +113,7 @@ void Player::Render(SDL_Renderer* renderer, SDL_Point camPos)
 bool Player::HandleCollision(GameObject* collidingObject)
 {
     solidCollision = true;
+    std::cout << "Whoa" << std::endl;
 
     return false;
 }

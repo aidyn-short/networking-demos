@@ -1,10 +1,11 @@
 ﻿  Player.cpp
-C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(98,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(96,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'Player.cpp')
   
-C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(106,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-  (compiling source file 'Player.cpp')
-  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(66,18): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(71,22): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(77,18): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(82,22): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
   Multiplayer2DShooter.vcxproj -> C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\x64\Debug\Multiplayer2DShooter.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

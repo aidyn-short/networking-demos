@@ -23,11 +23,12 @@ public:
 
 	
 	void UpdateAll(float dt) {
+		CheckCollision();
 		for (auto& obj : objects) {
 			obj->Update(dt);
 		}
 		RemoveDisabled();
-		CheckCollision();
+
 	}
 
 	void HandleEvent(SDL_Event& event) {
@@ -91,11 +92,16 @@ public:
 	}
 
 	bool OverlapOnAxis(std::vector<SDL_Point>& rect1, std::vector<SDL_Point>& rect2, SDL_Point axis) {
-		// Project the points of rect1 and rect2 onto the axis
+		// Normalize axis
+		float length = std::sqrt(axis.x * axis.x + axis.y * axis.y);
+		if (length == 0) return true; // Avoid divide-by-zero
+		float nx = axis.x / length;
+		float ny = axis.y / length;
+
 		float min1 = std::numeric_limits<float>::infinity();
 		float max1 = -std::numeric_limits<float>::infinity();
 		for (const auto& p : rect1) {
-			float projection = (p.x * axis.x + p.y * axis.y);
+			float projection = p.x * nx + p.y * ny;
 			min1 = std::min(min1, projection);
 			max1 = std::max(max1, projection);
 		}
@@ -103,12 +109,11 @@ public:
 		float min2 = std::numeric_limits<float>::infinity();
 		float max2 = -std::numeric_limits<float>::infinity();
 		for (const auto& p : rect2) {
-			float projection = (p.x * axis.x + p.y * axis.y);
+			float projection = p.x * nx + p.y * ny;
 			min2 = std::min(min2, projection);
 			max2 = std::max(max2, projection);
 		}
 
-		// Check for overlap
 		return !(max1 < min2 || max2 < min1);
 	}
 
@@ -137,13 +142,13 @@ public:
 
 		SDL_Point topLeft = { rect.x, rect.y };
 		SDL_Point topRight = { rect.x + rect.w, rect.y };
-		SDL_Point bottomLeft = { rect.x, rect.y + rect.h };
 		SDL_Point bottomRight = { rect.x + rect.w, rect.y + rect.h };
+		SDL_Point bottomLeft = { rect.x, rect.y + rect.h };
 
 		corners.push_back(RotatePoint(topLeft, center, angle));
 		corners.push_back(RotatePoint(topRight, center, angle));
-		corners.push_back(RotatePoint(bottomLeft, center, angle));
 		corners.push_back(RotatePoint(bottomRight, center, angle));
+		corners.push_back(RotatePoint(bottomLeft, center, angle));
 
 		return corners;
 	}
