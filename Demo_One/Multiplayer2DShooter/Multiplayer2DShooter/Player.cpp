@@ -65,8 +65,19 @@ void Player::Update(float deltaTime)
 
 
     posX += velX * Time::Get().GetDeltaTime();
+    if ((posX < 0) || (posX + Player_WIDTH > 1280)) {
+        posX -= velX * Time::Get().GetDeltaTime();
+    }
+
+
+
 
     posY += velY * Time::Get().GetDeltaTime();
+    if ((posY < 0) || (posY + Player_HEIGHT > 960)) {
+        posY -= velY * Time::Get().GetDeltaTime();
+
+    }
+
 
 
     collision.x = posX;
@@ -94,7 +105,7 @@ int Player::getPosY()
 void Player::Render(SDL_Renderer* renderer, SDL_Point camPos)
 {
 
-    texture.render(renderer, posX - camPos.x, posY - camPos.y);
+    texture.render(renderer, posX - camPos.x, posY - camPos.y, NULL, angle);
 }
 
 bool Player::HandleCollision(GameObject* collidingObject)
@@ -103,20 +114,11 @@ bool Player::HandleCollision(GameObject* collidingObject)
     std::cout << "Whoa" << std::endl;
 
     bool colliding = solidCollision;
-    if ((posX < 0) || (posX + Player_WIDTH > 1280) || colliding)
+    if (colliding)
     {
         //Move back
         posX -= velX * Time::Get().GetDeltaTime();
-
-        solidCollision = false;
-    }
-
-
-    if ((posY < 0) || (posY + Player_HEIGHT > 960) || colliding)
-    {
-        //Move back
         posY -= velY * Time::Get().GetDeltaTime();
-
         solidCollision = false;
     }
 

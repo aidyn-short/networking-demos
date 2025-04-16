@@ -45,7 +45,7 @@ public:
 			for (size_t j = i + 1; j < objects.size(); ++j) {
 				GameObject& objectA = *objects[i];
 				GameObject& objectB = *objects[j];
-				if (IsColliding(objectA.collision, objectA.angle, objectB.collision, objectB.angle))
+				if (IsColliding(objectA.collision, objectA.angle * (3.1415/180), objectB.collision, objectB.angle * (3.1415 / 180)))
 				{
 					objectA.HandleCollision(&objectB);
 					objectB.HandleCollision(&objectA);

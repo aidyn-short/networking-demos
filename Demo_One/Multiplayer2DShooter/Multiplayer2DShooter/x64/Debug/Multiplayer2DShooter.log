@@ -79,10 +79,10 @@ C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DSho
   
 C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(17,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(18,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(86,12): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(91,12): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
-C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(97,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(97,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(97,12): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(102,12): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(108,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(108,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Source.cpp
 C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Time.h(18,31): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
   (compiling source file 'Source.cpp')

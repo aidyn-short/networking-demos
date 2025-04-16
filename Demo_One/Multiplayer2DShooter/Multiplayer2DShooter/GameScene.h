@@ -54,7 +54,9 @@ void GameScene::Init(SDL_Renderer* renderer, SceneManager* manager)
 	playerOne = new Player(*playerTexture);
 
 
-	wallOne = new Wall(renderer, 400, 400, 60, "left.bmp");
+
+
+	wallOne = new Wall(renderer, 400, 400, 0, "left.bmp");
 
 
 
@@ -101,6 +103,7 @@ void GameScene::Render(SDL_Renderer* renderer)
 	{
 		camera.y = LEVEL_HEIGHT - camera.h;
 	}
+	
 
 	background->render(renderer,-100 - camera.x,-100 - camera.y);
 
