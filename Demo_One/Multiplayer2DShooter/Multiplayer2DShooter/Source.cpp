@@ -15,6 +15,9 @@
 #include "SceneManager.h"
 #include "MenuScene.h"
 
+
+
+
 SDL_Window* gWindow = NULL;
 
 
@@ -131,6 +134,12 @@ void close() {
 
 int main(int argc, char* args[])
 {
+
+
+
+
+
+
 
 	if (!init())
 	{

@@ -15,10 +15,17 @@ public:
 
 	bool GetEnabled() { return enabled; }
 
+	void SetLoca(bool local) { this->local = local; }
+	bool GetLocal() { return local; }
+
 	bool enabled = true;
 
 	SDL_FRect collision;
 	Texture texture;
 	float posX, posY;
 	float angle;
+	std::string objectType;
+	int id;
+	bool local;
+
 };

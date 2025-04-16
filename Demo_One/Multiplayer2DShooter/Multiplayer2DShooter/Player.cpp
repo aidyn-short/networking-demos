@@ -17,6 +17,11 @@ Player::Player(Texture& playerTexture)
     collision.w = playerTexture.getWidth();
     collision.h = playerTexture.getHeight();
 
+    objectType = "Player";
+    id = SDL_GetTicks();
+
+
+
 
     GameObjectRegistry::Get().Add(this);
 

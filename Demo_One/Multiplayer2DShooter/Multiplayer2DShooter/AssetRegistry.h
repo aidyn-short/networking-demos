@@ -5,7 +5,6 @@
 #include <typeindex>
 #include <type_traits>
 
-
 class AssetRegistry
 {
 public:

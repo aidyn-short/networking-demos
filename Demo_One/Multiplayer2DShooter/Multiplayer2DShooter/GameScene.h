@@ -56,6 +56,7 @@ void GameScene::Init(SDL_Renderer* renderer, SceneManager* manager)
 
 
 
+
 	wallOne = new Wall(renderer, 400, 400, 0, "left.bmp");
 
 

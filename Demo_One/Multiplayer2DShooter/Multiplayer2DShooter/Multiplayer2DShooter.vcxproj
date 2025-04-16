@@ -139,6 +139,7 @@
     <ClInclude Include="GameObjectRegistry.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Socket.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="MenuScene.h" />
