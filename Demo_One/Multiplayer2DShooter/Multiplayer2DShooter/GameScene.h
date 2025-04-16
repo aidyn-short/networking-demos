@@ -54,7 +54,7 @@ void GameScene::Init(SDL_Renderer* renderer, SceneManager* manager)
 	playerOne = new Player(*playerTexture);
 
 
-	wallOne = new Wall(renderer, 400, 400, 0, "left.bmp");
+	wallOne = new Wall(renderer, 400, 400, 60, "left.bmp");
 
 
 
@@ -70,7 +70,7 @@ void GameScene::Update(float deltaTime)
 	GameObjectRegistry::Get().UpdateAll(deltaTime);
 
 
-	//playerOne->Update(deltaTime);
+
 }
 
 void GameScene::Render(SDL_Renderer* renderer)

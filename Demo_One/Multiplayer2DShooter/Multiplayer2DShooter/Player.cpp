@@ -50,8 +50,7 @@ void Player::HandleEvent(SDL_Event& event)
         }
     }
 
-    collision.x += velX * Time::Get().GetDeltaTime();
-    collision.y += velY * Time::Get().GetDeltaTime();
+ 
 
  
 
@@ -59,35 +58,21 @@ void Player::HandleEvent(SDL_Event& event)
 
 void Player::Update(float deltaTime)
 {
+
+
+
     //Move the dot left or right
 
 
+    posX += velX * Time::Get().GetDeltaTime();
 
- 
-    bool colliding = solidCollision;
-    posX += velX * deltaTime;
-    //If the dot went too far to the left or right
-    if ((posX < 0) || (posX + Player_WIDTH > 1280)  || colliding)
-    {
-        //Move back
-        posX -= velX * deltaTime;
+    posY += velY * Time::Get().GetDeltaTime();
 
-    solidCollision = false;
-    }
-
-
-    posY += velY * deltaTime;
-    //If the dot went too far up or down
-    if ((posY < 0) || (posY + Player_HEIGHT > 960) || colliding)
-    {
-        //Move back
-        posY -= velY * deltaTime;
-
-    solidCollision = false;
-    }
 
     collision.x = posX;
     collision.y = posY;
+
+
 
   
 
@@ -116,6 +101,27 @@ bool Player::HandleCollision(GameObject* collidingObject)
 {
     solidCollision = true;
     std::cout << "Whoa" << std::endl;
+
+    bool colliding = solidCollision;
+    if ((posX < 0) || (posX + Player_WIDTH > 1280) || colliding)
+    {
+        //Move back
+        posX -= velX * Time::Get().GetDeltaTime();
+
+        solidCollision = false;
+    }
+
+
+    if ((posY < 0) || (posY + Player_HEIGHT > 960) || colliding)
+    {
+        //Move back
+        posY -= velY * Time::Get().GetDeltaTime();
+
+        solidCollision = false;
+    }
+
+
+
 
     return false;
 }

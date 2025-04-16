@@ -12,6 +12,7 @@ public:
 
 
 	void Update() {
+		lastDeltaTime = GetDeltaTime();
 		deltaTime = SDL_GetTicks() - lastFrameTime;
 
 		lastFrameTime = SDL_GetTicks();
@@ -22,6 +23,7 @@ public:
 	float GetDeltaTime() { return deltaTime/1000; };
 
 	float deltaTime;
+	float lastDeltaTime;
 	float lastFrameTime = 0;
 
 private:

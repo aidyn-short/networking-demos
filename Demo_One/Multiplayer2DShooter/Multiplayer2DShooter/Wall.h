@@ -7,7 +7,7 @@
 class Wall : public GameObject
 {
 public:
-	Wall(SDL_Renderer* renderer, int posX, int posY, float angle, std::string textureName);
+	Wall(SDL_Renderer* renderer, float posX, float posY, float angle, std::string textureName);
 	~Wall();
 
 
@@ -33,12 +33,12 @@ private:
 
 
 
-Wall::Wall(SDL_Renderer* renderer, int posX, int posY, float angle, std::string textureName)
+Wall::Wall(SDL_Renderer* renderer, float posX, float posY, float angle, std::string textureName)
 {
 	this->posX = posX;
 	this->posY = posY;
 	this->texture.loadFromFile(renderer, textureName);
-	collision = { posX, posY, texture.getWidth(), texture.getHeight() };
+	collision = { posX, posY, (float)texture.getWidth(), (float)texture.getHeight() };
 	this->angle = angle;
 	GameObjectRegistry::Get().Add(this);
 

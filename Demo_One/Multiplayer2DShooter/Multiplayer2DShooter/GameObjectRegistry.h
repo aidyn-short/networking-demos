@@ -23,12 +23,13 @@ public:
 
 	
 	void UpdateAll(float dt) {
-		CheckCollision();
+		
 		for (auto& obj : objects) {
 			obj->Update(dt);
 		}
+		CheckCollision();
 		RemoveDisabled();
-
+	
 	}
 
 	void HandleEvent(SDL_Event& event) {
@@ -56,7 +57,7 @@ public:
 
 
 
-	bool IsColliding(SDL_Rect& rectA, double rotationA, SDL_Rect& rectB, double rotationB) {
+	bool IsColliding(SDL_FRect& rectA, double rotationA, SDL_FRect& rectB, double rotationB) {
 		SDL_Point centerA = { rectA.x + rectA.w / 2, rectA.y + rectA.h / 2 };
 		SDL_Point centerB = { rectB.x + rectB.w / 2, rectB.y + rectB.h / 2 };
 
@@ -137,7 +138,7 @@ public:
 	}
 
 
-	std::vector<SDL_Point> GetRotatedCorners(SDL_Rect& rect, SDL_Point center, double angle) {
+	std::vector<SDL_Point> GetRotatedCorners(SDL_FRect& rect, SDL_Point center, double angle) {
 		std::vector<SDL_Point> corners;
 
 		SDL_Point topLeft = { rect.x, rect.y };

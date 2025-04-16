@@ -12,7 +12,7 @@ public:
     static const int Player_HEIGHT = 20;
 
     //Maximum axis velocity of the Player
-    static const int Player_VEL = 10;
+    static const int Player_VEL = 100;
 
     //Initializes the variables
     Player(Texture& playerTexture);
@@ -37,7 +37,7 @@ private:
 
 
     //The velocity of the Player
-    int velX,velY;
+    float velX,velY;
 
     bool solidCollision = false;
 

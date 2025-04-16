@@ -17,8 +17,8 @@ public:
 
 	bool enabled = true;
 
-	SDL_Rect collision;
+	SDL_FRect collision;
 	Texture texture;
-	int posX, posY;
+	float posX, posY;
 	float angle;
 };
