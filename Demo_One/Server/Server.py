@@ -25,7 +25,7 @@ class Server:
         self.tcp_connections = {}
         # UDP clients: key = (ip, port) tuple; value = last seen timestamp.
         self.udp_clients = {}
-
+        self.clients = 0
 
         self.tcp_messages = []
         # For storing incoming UDP messages (if you want to relay them).
@@ -42,7 +42,6 @@ class Server:
         threading.Thread(target=self.periodic_tcp_broadcast, daemon=True).start()
         threading.Thread(target=self.periodic_udp_broadcast, daemon=True).start()
         threading.Thread(target=self.udp_listener, daemon=True).start()
-
         print("TCP server started. Waiting for connections...")
         # Accept incoming TCP connections.
         while True:
@@ -50,9 +49,12 @@ class Server:
                 client_socket, addr = self.tcp_socket.accept()
                 # Here we set non-blocking mode on the socket. Note: Using non-blocking
                 # sending requires handling partial sends.
-                client_socket.setblocking(False)
+                client_socket.setblocking(True)
                 with self.tcp_lock:
                     self.tcp_connections[client_socket] = {"address": addr, "last_seen": time.time()}
+                    self.clients = self.clients + 1
+                    json_data = json.dumps(self.clients).encode()
+                    client_socket.sendall(json_data)
                 threading.Thread(target=self.client_connected, args=(client_socket,), daemon=True).start()
                 print(f"[+] TCP Connection from {addr}")
             except BlockingIOError:
@@ -120,7 +122,7 @@ class Server:
             for sock, info in list(self.tcp_connections.items()):
                 try:
                     sock.send(compressed_data)
-                    print(f"Sent TCP message to {info['address']}")
+                  #  print(f"Sent TCP message to {info['address']}")
                 except Exception as e:
                     print(f"Error sending TCP message to {info['address']}: {e}")
 
@@ -140,9 +142,13 @@ class Server:
             except BlockingIOError:
                 time.sleep(0.01)
                 continue
+            except ConnectionResetError as e:
+                #print(f"UDP Connection Reset")
+                continue  # Continue listening for new messages
             try:
-                decompressed = zlib.decompress(data)
-                message = json.loads(decompressed.decode())
+                #decompressed = zlib.decompress(data)
+                #message = json.loads(data.decode())
+                message = (data.decode())
                 print(f"Received UDP data from {addr}: {message}")
             except Exception as e:
                 print(f"Error parsing UDP message from {addr}: {e}")
@@ -151,7 +157,8 @@ class Server:
             # Track the UDP client by updating last seen.
             with self.udp_lock:
                 self.udp_clients[addr] = time.time()
-                self.udp_messages.append( message)
+                if message not in self.udp_messages:
+                    self.udp_messages.append( message)
 
     def check_udp_timeouts(self):
         """ Removes UDP clients that haven't sent data recently. """
@@ -161,6 +168,7 @@ class Server:
                 for addr in list(self.udp_clients.keys()):
                     if now - self.udp_clients[addr] > DISCONNECT_TIMEOUT:
                         print(f"[!] UDP Timeout: {addr}")
+                        self.clients -= 1
                         del self.udp_clients[addr]
             time.sleep(1)
 
@@ -168,9 +176,10 @@ class Server:
         """
         Prepares and sends a message via UDP to all known UDP clients.
         """
+
         try:
             json_data = json.dumps(message).encode()
-            compressed_data = zlib.compress(json_data)
+            #compressed_data = zlib.compress(json_data)
         except Exception as e:
             print("Error preparing UDP message:", e)
             return
@@ -178,8 +187,8 @@ class Server:
         with self.udp_lock:
             for addr in list(self.udp_clients.keys()):
                 try:
-                    self.udp_socket.sendto(compressed_data, addr)
-                    print(f"Sent UDP message to {addr}")
+                    self.udp_socket.sendto(json_data, addr)
+                    #print(f"Sent UDP message to {addr}")
                 except Exception as e:
                     print(f"Error sending UDP message to {addr}: {e}")
 
@@ -189,12 +198,13 @@ class Server:
         """ Periodically broadcasts a UDP update to all tracked UDP clients. """
         while True:
             # Prepare an update that includes current time and any accumulated UDP messages.
-            with self.udp_lock:
-                update = {"type": "udp_update", "time": time.time(), "udp_messages": self.udp_messages}
-                # Clear messages after broadcasting.
-                self.udp_messages = []
-            self.broadcast_udp(update)
-            time.sleep(0.016)
+            if self.udp_messages:
+                with self.udp_lock:
+                    update = {"type": "udp_update", "time": time.time(), "udp_messages": self.udp_messages}
+                    # Clear messages after broadcasting.
+                    self.udp_messages = []
+                self.broadcast_udp(update)
+                time.sleep(0.016)
 
 
 if __name__ == "__main__":

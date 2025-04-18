@@ -9,12 +9,12 @@
 #include <cmath>
 #include "Button.h"
 #include <SDL2/SDL_mixer.h>
-#include "Timer.h"
 #include <sstream>
 #include "Player.h"
 #include "SceneManager.h"
 #include "MenuScene.h"
-
+#include "Socket.h"
+#include "AssetRegistry.h"
 
 
 
@@ -37,6 +37,9 @@ SceneManager sceneManager;
 
 
 bool init() {
+
+	SocketInit();
+
 
 	bool success = true;
 
@@ -102,6 +105,19 @@ bool init() {
 	}
 
 
+
+
+
+
+	//Init all the assets
+
+
+	Texture* playerTexture = new Texture();
+	playerTexture->loadFromFile(renderer, "survivor-idle_flashlight_0.png");
+	playerTexture->SetScale(.33f, .33f);
+	AssetRegistry::Get().Register("player", playerTexture);
+	
+	
 	return success;
 }
 
@@ -125,6 +141,7 @@ void close() {
 	IMG_Quit();
 	Mix_Quit();
 	SDL_Quit();
+	SocketShutdown();
 }
 
 

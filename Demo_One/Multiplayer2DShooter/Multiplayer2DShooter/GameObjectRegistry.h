@@ -1,6 +1,10 @@
 #pragma once
 #include "GameObject.h"
 #include <vector>
+#include <unordered_map>
+#include <sstream>
+#include "player.h"
+
 
 
 class GameObjectRegistry
@@ -12,9 +16,26 @@ public:
 	}
 
 
+	void SetClient(int clientNumber) { this->clientNumber = clientNumber; std::cout << clientNumber << std::endl << std::endl; }
+
+	int GetClientNumber() { return clientNumber; }
+
+
 	void Add(GameObject* object) {
 		objects.push_back(object);
+		objectMap[std::to_string(object->GetClientID()) + std::to_string(object->GetID())] = object;
+
 	}
+
+	GameObject* GetByID(std::string id) {
+		auto object = objectMap.find(id);
+		if (object != objectMap.end())
+		{
+			return object->second;
+		}
+		return nullptr;
+	}
+
 
 
 	const std::vector<GameObject*> getAll() {
@@ -25,16 +46,118 @@ public:
 	void UpdateAll(float dt) {
 		
 		for (auto& obj : objects) {
-			obj->Update(dt);
+			if (obj->GetClientID() == clientNumber)
+			{
+				obj->Update(dt);
+			}
+			
 		}
 		CheckCollision();
 		RemoveDisabled();
 	
 	}
 
+
+	void RenderAll(SDL_Renderer* renderer, SDL_Point camera) {
+
+		for (auto& obj : objects) {
+			obj->Render(renderer, camera);
+
+		}
+	}
+
+
+	std::string TrimMessage(const std::string& raw) {
+		std::string s = raw;
+
+		// Remove leading and trailing quotes
+		if (!s.empty() && s.front() == '\"') s.erase(0, 1);
+		if (!s.empty() && s.back() == '\"') s.pop_back();
+
+		// Remove trailing slash if it's there
+		if (!s.empty() && s.back() == '/') s.pop_back();
+
+		return s;
+	}
+
+
+
+	void UpdateNetworked(std::string udpMessage) {
+
+		size_t start = udpMessage.find("[");
+		size_t end = udpMessage.find("]");
+		std::string messages_block = udpMessage.substr(start + 1, end - start - 1);
+		
+		
+		std::vector<std::string> udpMessages;
+		std::stringstream ss(messages_block);
+		std::string item;
+
+		while (std::getline(ss, item, ',')) {
+			udpMessages.push_back(TrimMessage(item));
+		}
+
+		for (const std::string& msg : udpMessages) {
+
+			std::vector<std::string> parts;
+			std::stringstream msgStream(msg);
+			std::string segment;
+
+			while (std::getline(msgStream, segment, '=')) {
+				parts.push_back(segment);
+			}
+
+			// Optional: remove trailing '/' from last part
+			if (!parts.empty() && parts.back().back() == '/') {
+				parts.back().pop_back();
+			}
+
+
+
+			if (parts[1] ==std::to_string(clientNumber))
+			{
+				// do nothing it's a local object that's already updated
+				//std::cout << "local";
+			}
+			else if (GetByID((parts[1] + parts[2])) == nullptr)
+			{
+				//Create new object
+
+				if (parts[0] == "player")
+				{
+					Player* remotePlayer = new Player();
+					remotePlayer->Read(parts);
+					Add(remotePlayer);
+					std::cout << "Player made";
+				}
+
+
+
+
+			}
+			else
+			{
+				GetByID((parts[1] + parts[2]))->Read(parts);
+		
+			}
+
+
+
+
+		}
+
+
+
+	}
+
+
+
 	void HandleEvent(SDL_Event& event) {
 		for (auto& obj : objects) {
-			obj->HandleEvent(event);
+			if (obj->GetClientID() == clientNumber)
+			{
+				obj->HandleEvent(event);
+			}
 		}
 	}
 
@@ -154,10 +277,16 @@ public:
 		return corners;
 	}
 
+
+
+
+
+
 private:
 
 	std::vector<GameObject*> objects;
-	
+	std::unordered_map<std::string, GameObject*> objectMap; 
+
 	
 	static bool IsEnabled(GameObject* object) {
 		return !object->GetEnabled();
@@ -174,7 +303,10 @@ private:
 		objects.erase(deletedObjects, objects.end());
 	}
 
+
+
 	
+	int clientNumber = 0;
 
 };
 

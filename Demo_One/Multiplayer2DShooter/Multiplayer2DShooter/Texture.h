@@ -33,8 +33,14 @@ public:
     void render(SDL_Renderer* renderer, int x, int y, SDL_Rect* clip = NULL, double angle = 0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
     //Gets image dimensions
-    int getWidth() { return mWidth; }
-    int getHeight() { return mHeight; }
+    int getWidth() { return mWidth * scaleX; }
+    int getHeight() { return mHeight * scaleY; }
+
+    void SetScale(double x, double y) {
+        scaleX = x; 
+        scaleY = y; 
+
+    }
 
 private:
     //The actual hardware texture
@@ -43,6 +49,9 @@ private:
     //Image dimensions
     int mWidth;
     int mHeight;
+
+    double scaleX =1;
+    double scaleY =1;
 
 
 

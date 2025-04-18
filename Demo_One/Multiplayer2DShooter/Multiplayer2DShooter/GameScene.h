@@ -2,7 +2,7 @@
 #include "Scene.h"
 #include "Player.h"
 #include "Wall.h"
-
+#include "Socket.h"
 
 
 
@@ -32,6 +32,10 @@ private:
 	SDL_Rect camera = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
 	Texture* background = NULL;
 	Wall* wallOne = NULL;
+	Socket* tcpSocket = NULL;
+	Socket* udpSocket = NULL;
+
+
 
 };
 
@@ -41,27 +45,58 @@ GameScene::GameScene()
 
 GameScene::~GameScene()
 {
+
 }
 
 void GameScene::Init(SDL_Renderer* renderer, SceneManager* manager)
 {
+
+	tcpSocket = new Socket(Socket::Family::INET, Socket::Type::TCP);
+	tcpSocket->Connect(Address("127.0.0.1", 5555));
+
+	char recvMsg[4096];
+
+
+
+	int msgSize =  tcpSocket->Recv(recvMsg, 4096);
+
+
+	std::string clientNumber(recvMsg, msgSize);
+
+
+	tcpSocket->SetNonBlockingMode(true);
+
+	GameObjectRegistry::Get().SetClient(std::stoi(clientNumber));
+
+
+
+	udpSocket = new Socket(Socket::Family::INET, Socket::Type::UDP);
+	udpSocket->SetNonBlockingMode(true);
+	
+
+
+	
+
 	Texture* playerTexture = new Texture();
 	TTF_Font* font = TTF_OpenFont("lazy.ttf", 20);
 	playerTexture->loadFromRenderedText(renderer, "i", SDL_Color{ 255,255,255,255 }, font);
 	background = new Texture();
 	background->loadFromFile(renderer, "menu.png");
 
-	playerOne = new Player(*playerTexture);
+	playerOne = new Player();
+	playerOne->SetClient(std::stoi(clientNumber));
 
 
 
-
+	GameObjectRegistry::Get().Add(playerOne);
 
 	wallOne = new Wall(renderer, 400, 400, 0, "left.bmp");
 
 
 
 }
+
+
 
 
 
@@ -72,6 +107,37 @@ void GameScene::Update(float deltaTime)
 
 	GameObjectRegistry::Get().UpdateAll(deltaTime);
 
+
+	char buffer[4096];
+
+	Address addressIGuess = Address("127.0.0.1", 5556);
+
+	std::string message = playerOne->Write();
+
+
+	udpSocket->SendTo(message.data(), message.size(), Address("127.0.0.1", 5556));
+
+	size_t recvSize =  udpSocket->RecvFrom(buffer, 4096, addressIGuess);
+
+
+
+	if (recvSize > 0 && recvSize < 4096)
+	{
+		std::string recvMsg(buffer, recvSize);
+
+
+
+		GameObjectRegistry::Get().UpdateNetworked(recvMsg);
+		
+	}
+
+	
+
+
+	
+
+
+	
 
 
 }
@@ -104,12 +170,15 @@ void GameScene::Render(SDL_Renderer* renderer)
 	{
 		camera.y = LEVEL_HEIGHT - camera.h;
 	}
+	background->render(renderer, -100 - camera.x, -100 - camera.y);
+
+	GameObjectRegistry::Get().RenderAll(renderer, SDL_Point{ camera.x, camera.y });
+
+
 	
 
-	background->render(renderer,-100 - camera.x,-100 - camera.y);
-
-	wallOne->Render(renderer, SDL_Point{ camera.x, camera.y });
-	playerOne->Render(renderer, SDL_Point{camera.x, camera.y});
+	//wallOne->Render(renderer, SDL_Point{ camera.x, camera.y });
+	//playerOne->Render(renderer, SDL_Point{camera.x, camera.y});
 
 
 

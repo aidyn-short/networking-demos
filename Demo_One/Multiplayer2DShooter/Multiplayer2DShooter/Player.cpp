@@ -1,8 +1,7 @@
 #include "Player.h"
-
-
-
-Player::Player(Texture& playerTexture)
+#include "GameObjectRegistry.h"
+#include "Scene.h"
+Player::Player()
 {
     //Initialize the offsets
     posX = 0;
@@ -12,18 +11,18 @@ Player::Player(Texture& playerTexture)
     velX = 0;
     velY = 0;
 
-    this->texture = playerTexture;
+    this->texture = *AssetRegistry::Get().GetAsset<Texture>("player");
 
-    collision.w = playerTexture.getWidth();
-    collision.h = playerTexture.getHeight();
+    collision.w = this->texture.getWidth();
+    collision.h = this->texture.getHeight();
 
-    objectType = "Player";
-    id = SDL_GetTicks();
+    objectType = "player";
+
+    
 
 
 
 
-    GameObjectRegistry::Get().Add(this);
 
 }
 
@@ -36,10 +35,10 @@ void Player::HandleEvent(SDL_Event& event)
         //Adjust the velocity
         switch (event.key.keysym.sym)
         {
-        case SDLK_UP: velY -= Player_VEL; break;
-        case SDLK_DOWN: velY += Player_VEL; break;
-        case SDLK_LEFT: velX -= Player_VEL; break;
-        case SDLK_RIGHT: velX += Player_VEL; break;
+        case SDLK_w: velY -= Player_VEL; break;
+        case SDLK_s: velY += Player_VEL; break;
+        case SDLK_a: velX -= Player_VEL; break;
+        case SDLK_d: velX += Player_VEL; break;
         }
     }
     //If a key was released
@@ -48,14 +47,49 @@ void Player::HandleEvent(SDL_Event& event)
         //Adjust the velocity
         switch (event.key.keysym.sym)
         {
-        case SDLK_UP: velY += Player_VEL; break;
-        case SDLK_DOWN: velY -= Player_VEL; break;
-        case SDLK_LEFT: velX += Player_VEL; break;
-        case SDLK_RIGHT: velX -= Player_VEL; break;
+        case SDLK_w: velY += Player_VEL; break;
+        case SDLK_s: velY -= Player_VEL; break;
+        case SDLK_a: velX += Player_VEL; break;
+        case SDLK_d: velX -= Player_VEL; break;
         }
     }
 
- 
+    if (event.type == SDL_MOUSEMOTION) {
+        float objX = posX + texture.getWidth() / 2.0f;
+        float objY = posY + texture.getHeight() / 2.0f;
+
+        SDL_Rect camera = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
+
+        camera.x = (posX + texture.getWidth() / 2) - SCREEN_WIDTH / 2;
+        camera.y = (posY + texture.getHeight() / 2) - SCREEN_HEIGHT / 2;
+
+        if (camera.x < 0)
+        {
+            camera.x = 0;
+        }
+        if (camera.y < 0)
+        {
+            camera.y = 0;
+        }
+        if (camera.x > LEVEL_WIDTH - camera.w)
+        {
+            camera.x = LEVEL_WIDTH - camera.w;
+        }
+        if (camera.y > LEVEL_HEIGHT - camera.h)
+        {
+            camera.y = LEVEL_HEIGHT - camera.h;
+        }
+
+        int mouseX, mouseY;
+        SDL_GetMouseState(&mouseX, &mouseY);
+  
+        float deltaX = mouseX + camera.x - objX;
+        float deltaY = mouseY + camera.y - objY;
+        float angle = atan2(deltaY, deltaX) * 180.0 / M_PI; // radians to degrees
+
+        this->angle = angle;
+
+    }
 
  
 
@@ -107,6 +141,37 @@ int Player::getPosY()
     return posY;
 }
 
+std::string Player::Write()
+{
+    std::string playerInfo;
+    playerInfo += objectType;
+    playerInfo += "=";
+    playerInfo += std::to_string(client);
+    playerInfo += "=";
+    playerInfo += std::to_string(this->GetID());
+    playerInfo += "=";
+    playerInfo += std::to_string(posX);
+    playerInfo += "=";
+    playerInfo += std::to_string(posY);
+    playerInfo += "=";
+    playerInfo += std::to_string(angle);
+
+    return playerInfo;
+}
+
+void Player::Read(std::vector<std::string> info)
+{
+    SetClient(std::stoi (info[1]));
+    SetID(std::stoi(info[2]));
+    posX = std::stof(info[3]);
+    posY = std::stof(info[4]);
+    angle = std::stof(info[5]);
+   
+    collision.x = posX;
+    collision.y = posY;
+
+}
+
 void Player::Render(SDL_Renderer* renderer, SDL_Point camPos)
 {
 
@@ -115,20 +180,26 @@ void Player::Render(SDL_Renderer* renderer, SDL_Point camPos)
 
 bool Player::HandleCollision(GameObject* collidingObject)
 {
-    solidCollision = true;
-    std::cout << "Whoa" << std::endl;
 
-    bool colliding = solidCollision;
-    if (colliding)
+    if (client == GameObjectRegistry::Get().GetClientNumber())
     {
-        //Move back
-        posX -= velX * Time::Get().GetDeltaTime();
-        posY -= velY * Time::Get().GetDeltaTime();
-        solidCollision = false;
+        solidCollision = true;
+
+
+        bool colliding = solidCollision;
+        if (colliding)
+        {
+            //Move back
+            posX -= velX * Time::Get().GetDeltaTime();
+            posY -= velY * Time::Get().GetDeltaTime();
+            solidCollision = false;
+        }
+
+        std::cout << "collided wit" << collidingObject->posX << " " << collidingObject->posY << "I am" << posX << "  " << posY << std::endl;
+
+
+        return false;
     }
-
-
-
 
     return false;
 }
