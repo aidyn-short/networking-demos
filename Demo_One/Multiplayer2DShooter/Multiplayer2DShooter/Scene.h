@@ -8,12 +8,16 @@
 
 class SceneManager;
 
-const int SCREEN_HEIGHT = 540;
-const int SCREEN_WIDTH = 960;
+const int SCREEN_HEIGHT = 540*1.5;
+const int SCREEN_WIDTH = 960*1.5;
 
 
-const int LEVEL_WIDTH = 1280;
-const int LEVEL_HEIGHT = 960;
+const int LEVEL_WIDTH = 2500;
+const int LEVEL_HEIGHT = 2500;
+
+const std::vector<SDL_Point> playerSpawns = { {200,200}, {LEVEL_WIDTH - 200,LEVEL_HEIGHT - 200 }, {LEVEL_WIDTH - 200,200}, {200, LEVEL_HEIGHT - 200} };
+
+
 
 class Scene {
 

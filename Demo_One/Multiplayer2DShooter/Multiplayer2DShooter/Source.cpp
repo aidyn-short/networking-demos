@@ -112,16 +112,17 @@ bool init() {
 	//Init all the assets
 
 
+
 	Texture* playerTexture = new Texture();
 	playerTexture->loadFromFile(renderer, "survivor-idle_flashlight_0.png");
-	playerTexture->SetScale(.33f, .33f);
+	playerTexture->SetScale(.25f, .25f);
 	AssetRegistry::Get().Register("player", playerTexture);
 	
 
 
 	Texture* playerRifle = new Texture();
 	playerRifle->loadFromFile(renderer, "survivor-shoot_rifle_0.png");
-	playerRifle->SetScale(.33f, .33f);
+	playerRifle->SetScale(.25f, .25f);
 	AssetRegistry::Get().Register("playerRifle", playerRifle);
 
 
@@ -136,7 +137,16 @@ bool init() {
 	projectileTexture->loadFromFile(renderer, "Zombie-Tileset---_0371_Capa-372.png");
 	AssetRegistry::Get().Register("rifleProjectile", projectileTexture);
 
+	Texture* backgroundTexture = new Texture();
+	backgroundTexture->loadFromFile(renderer, "Stones_Texture.png");
+	backgroundTexture->SetScale(.1, .1);
+	backgroundTexture->setAlpha(200);
+	AssetRegistry::Get().Register("background", backgroundTexture);
 
+	Texture* wallTexture = new Texture();
+	wallTexture->loadFromFile(renderer, "wall.bmp");
+	wallTexture->SetScale(.1, .1);
+	AssetRegistry::Get().Register("wall", wallTexture);
 	
 	return success;
 }

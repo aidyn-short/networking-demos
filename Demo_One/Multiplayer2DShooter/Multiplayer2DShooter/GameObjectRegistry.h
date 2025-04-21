@@ -64,9 +64,7 @@ public:
 			}
 			
 		}
-		CheckCollision();
-		RemoveDisabled();
-	
+
 	}
 
 
@@ -84,16 +82,11 @@ public:
 
 
 	std::string TrimMessage(const std::string& raw) {
-		std::string s = raw;
-
-		// Remove leading and trailing quotes
-		if (!s.empty() && s.front() == '\"') s.erase(0, 1);
-		if (!s.empty() && s.back() == '\"') s.pop_back();
-
-		// Remove trailing slash if it's there
-		if (!s.empty() && s.back() == '/') s.pop_back();
-
-		return s;
+		size_t start = raw.find_first_not_of(" \"");
+		size_t end = raw.find_last_not_of(" \"");
+		return (start == std::string::npos || end == std::string::npos)
+			? ""
+			: raw.substr(start, end - start + 1);
 	}
 
 
@@ -128,21 +121,19 @@ public:
 		size_t end = udpMessage.find("]");
 		std::string messages_block = udpMessage.substr(start + 1, end - start - 1);
 		
+
+		messages_block.erase(std::remove(messages_block.begin(), messages_block.end(), '\"'), messages_block.end());
+
 		
 		std::vector<std::string> udpMessages;
 		std::stringstream ss(messages_block);
 		std::string item;
 
-		while (std::getline(ss, item, ',')) {
+		while (std::getline(ss, item, '+')) {
 			udpMessages.push_back(TrimMessage(item));
 		}
 
-
-
 		for (const std::string& msg : udpMessages) {
-
-	
-
 
 			std::vector<std::string> parts;
 			std::stringstream msgStream(msg);
@@ -162,7 +153,6 @@ public:
 				continue;
 			}
 
-
 			if (parts[1] ==std::to_string(clientNumber))
 			{
 				// do nothing it's a local object that's already updated
@@ -181,29 +171,19 @@ public:
 				}
 				if (parts[0] == "rifleProjectile")
 				{
-					RifleProjectile* remoteProjectile = new RifleProjectile();
+					RifleProjectile* remoteProjectile = new RifleProjectile(0,0,0);
 					remoteProjectile->Read(parts);
 					Add(remoteProjectile);
 			
 
 				}
-		
-
-
 			}
 			else
 			{
 				GetByID((parts[1] + parts[2]))->Read(parts);
 		
 			}
-
-
-
-
 		}
-
-
-
 	}
 
 
@@ -223,9 +203,15 @@ public:
 		for (size_t i = 0; i < objects.size(); i++)
 		{
 			for (size_t j = i + 1; j < objects.size(); ++j) {
+
 				GameObject& objectA = *objects[i];
 				GameObject& objectB = *objects[j];
-				if (IsColliding(objectA.collision, objectA.angle * (3.1415/180), objectB.collision, objectB.angle * (3.1415 / 180)))
+
+				if (objectA.objectType == "wall" && objectB.objectType == "wall")
+				{
+					continue;
+				}
+				else if (IsColliding(objectA.collision, objectA.angle * (3.1415/180), objectB.collision, objectB.angle * (3.1415 / 180)))
 				{
 					objectA.HandleCollision(&objectB);
 					objectB.HandleCollision(&objectA);
@@ -336,7 +322,23 @@ public:
 
 
 
+	void RemoveDisabled() {
+		auto it = objects.begin();
+		while (it != objects.end()) {
+			if (!(*it)->GetEnabled()) {
+				GameObject* obj = *it;
+				if (obj->deleteObject)
+				{
+					delete obj;
+				}
+				it = objects.erase(it);
 
+			}
+			else {
+				++it;
+			}
+		}
+	}
 
 
 private:
@@ -351,23 +353,7 @@ private:
 		return !object->GetEnabled();
 	}
 
-	void RemoveDisabled() {
-		auto it = objects.begin();
-		while (it != objects.end()) {
-			if (!(*it)->GetEnabled()) {
-				GameObject* obj = *it;
-				if (obj->deleteObject)
-				{
-					delete obj;
-				}
-				it = objects.erase(it);
-				
-			}
-			else {
-				++it;
-			}
-		}
-	}
+	
 
 
 

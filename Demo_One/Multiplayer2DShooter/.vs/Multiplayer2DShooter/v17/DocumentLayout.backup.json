@@ -7,86 +7,90 @@
       "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\GameObjectRegistry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Player.h||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Player.h||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\RifleProjectile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\RifleProjectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Rifle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Rifle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\GameScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Rifle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Rifle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Weapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Weapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\SceneManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Rifle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Rifle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Socket.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Socket.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\MenuScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\MenuScene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\string||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\RifleProjectile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\RifleProjectile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Rifle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Rifle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Texture.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Texture.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Wall.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Texture.cpp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Texture.cpp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Socket.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Socket.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Player.h||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Player.h||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Weapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Weapon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|solutionrelative:Multiplayer2DShooter\\Button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\string||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{05F093C0-C72A-4616-AC01-215ABAE61001}|Multiplayer2DShooter\\Multiplayer2DShooter.vcxproj|C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\AssetRegistry.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -106,8 +110,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 197,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 165,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -118,77 +122,90 @@
               "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RifleProjectile.cpp",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.cpp",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\RifleProjectile.cpp",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.cpp",
-              "RelativeToolTip": "Multiplayer2DShooter\\RifleProjectile.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-21T03:07:28.275Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GameScene.h",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameScene.h",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\GameScene.h",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameScene.h",
-              "RelativeToolTip": "Multiplayer2DShooter\\GameScene.h",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAAAIYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-19T17:26:49.774Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "RifleProjectile.h",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.h",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\RifleProjectile.h",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.h",
-              "RelativeToolTip": "Multiplayer2DShooter\\RifleProjectile.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-21T00:48:57.197Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Rifle.cpp",
               "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Rifle.cpp",
               "RelativeDocumentMoniker": "Multiplayer2DShooter\\Rifle.cpp",
               "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Rifle.cpp",
               "RelativeToolTip": "Multiplayer2DShooter\\Rifle.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACcAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-21T01:37:19.142Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Weapon.h",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Weapon.h",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Weapon.h",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Weapon.h",
-              "RelativeToolTip": "Multiplayer2DShooter\\Weapon.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "Time.h",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Time.h",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Time.h",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Time.h",
+              "RelativeToolTip": "Multiplayer2DShooter\\Time.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-21T00:48:20.972Z",
+              "WhenOpened": "2025-04-17T18:24:14.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Scene.h",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Scene.h",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Scene.h",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Scene.h",
+              "RelativeToolTip": "Multiplayer2DShooter\\Scene.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAlwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-24T17:46:58.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
+              "Title": "Button.cpp",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Button.cpp",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Button.cpp",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Button.cpp",
+              "RelativeToolTip": "Multiplayer2DShooter\\Button.cpp",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAIwGwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-13T20:29:41.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameScene.h",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameScene.h",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\GameScene.h",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameScene.h",
+              "RelativeToolTip": "Multiplayer2DShooter\\GameScene.h",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAIwMMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-19T17:26:49.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Texture.h",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Texture.h",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Texture.h",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Texture.h",
+              "RelativeToolTip": "Multiplayer2DShooter\\Texture.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-24T17:40:31.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Rifle.h",
               "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Rifle.h",
               "RelativeDocumentMoniker": "Multiplayer2DShooter\\Rifle.h",
@@ -201,46 +218,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Button.cpp",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Button.cpp",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Button.cpp",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Button.cpp",
-              "RelativeToolTip": "Multiplayer2DShooter\\Button.cpp",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAG8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-13T20:29:41.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Time.h",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Time.h",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Time.h",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Time.h",
-              "RelativeToolTip": "Multiplayer2DShooter\\Time.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "RifleProjectile.h",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.h",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\RifleProjectile.h",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.h",
+              "RelativeToolTip": "Multiplayer2DShooter\\RifleProjectile.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-17T18:24:14.12Z",
+              "WhenOpened": "2025-04-21T00:48:57.197Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 8,
+              "Title": "RifleProjectile.cpp",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.cpp",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\RifleProjectile.cpp",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\RifleProjectile.cpp",
+              "RelativeToolTip": "Multiplayer2DShooter\\RifleProjectile.cpp",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-21T03:07:28.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Weapon.h",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Weapon.h",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Weapon.h",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Weapon.h",
+              "RelativeToolTip": "Multiplayer2DShooter\\Weapon.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-21T00:48:20.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "Socket.cpp",
               "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Socket.cpp",
               "RelativeDocumentMoniker": "Multiplayer2DShooter\\Socket.cpp",
               "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Socket.cpp",
               "RelativeToolTip": "Multiplayer2DShooter\\Socket.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAIwAIBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-18T14:12:40.774Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "xstring",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\xstring",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\xstring",
@@ -252,20 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Scene.h",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Scene.h",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Scene.h",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Scene.h",
-              "RelativeToolTip": "Multiplayer2DShooter\\Scene.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-24T17:46:58.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Text.h",
               "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Text.h",
               "RelativeDocumentMoniker": "Multiplayer2DShooter\\Text.h",
@@ -275,29 +292,107 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-08T02:13:35.29Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Texture.h",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Texture.h",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Texture.h",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Texture.h",
-              "RelativeToolTip": "Multiplayer2DShooter\\Texture.h",
-              "ViewState": "AgIAABMAAAAAAAAAAABBwB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-24T17:40:31.506Z",
-              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 203,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 235,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Source.cpp",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Source.cpp",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Source.cpp",
+              "RelativeToolTip": "Multiplayer2DShooter\\Source.cpp",
+              "ViewState": "AgIAAMUAAAAAAAAAAAAlwNYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T23:59:11.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "vector",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
+              "ViewState": "AgIAAFAHAAAAAAAAAAAIwGkHAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-21T04:26:13.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Wall.h",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Wall.h",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Wall.h",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Wall.h",
+              "RelativeToolTip": "Multiplayer2DShooter\\Wall.h",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-09T18:47:09.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameObjectRegistry.h",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameObjectRegistry.h",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\GameObjectRegistry.h",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameObjectRegistry.h",
+              "RelativeToolTip": "Multiplayer2DShooter\\GameObjectRegistry.h",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAlwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-10T00:11:34.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SceneManager.h",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\SceneManager.h",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\SceneManager.h",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\SceneManager.h",
+              "RelativeToolTip": "Multiplayer2DShooter\\SceneManager.h",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-24T17:57:56.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MenuScene.h",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\MenuScene.h",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\MenuScene.h",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\MenuScene.h",
+              "RelativeToolTip": "Multiplayer2DShooter\\MenuScene.h",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAIwE8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-21T17:23:59.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Player.cpp",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Player.cpp",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Player.cpp",
+              "RelativeToolTip": "Multiplayer2DShooter\\Player.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-21T15:21:23.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "GameObject.h",
               "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameObject.h",
               "RelativeDocumentMoniker": "Multiplayer2DShooter\\GameObject.h",
@@ -310,111 +405,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameObjectRegistry.h",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameObjectRegistry.h",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\GameObjectRegistry.h",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\GameObjectRegistry.h",
-              "RelativeToolTip": "Multiplayer2DShooter\\GameObjectRegistry.h",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAIwG4AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-10T00:11:34.623Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "vector",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\vector",
-              "ViewState": "AgIAAFAHAAAAAAAAAAAIwF8HAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-21T04:26:13.005Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Source.cpp",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Source.cpp",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Source.cpp",
-              "RelativeToolTip": "Multiplayer2DShooter\\Source.cpp",
-              "ViewState": "AgIAALwAAAAAAAAAAAAIwMsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "Texture.cpp",
+              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Texture.cpp",
+              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Texture.cpp",
+              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Texture.cpp",
+              "RelativeToolTip": "Multiplayer2DShooter\\Texture.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-15T23:59:11.877Z",
+              "WhenOpened": "2025-03-24T17:40:40.581Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Player.cpp",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Player.cpp",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Player.cpp",
-              "RelativeToolTip": "Multiplayer2DShooter\\Player.cpp",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAIwLwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-09T17:44:57.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 19,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Player.h",
               "RelativeDocumentMoniker": "Multiplayer2DShooter\\Player.h",
               "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Player.h",
               "RelativeToolTip": "Multiplayer2DShooter\\Player.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADYAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAABBwDYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-24T17:40:40.607Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Wall.h",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Wall.h",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Wall.h",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Wall.h",
-              "RelativeToolTip": "Multiplayer2DShooter\\Wall.h",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-09T18:47:09.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "Button.h",
               "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Button.h",
               "RelativeDocumentMoniker": "Multiplayer2DShooter\\Button.h",
               "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Button.h",
               "RelativeToolTip": "Multiplayer2DShooter\\Button.h",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAEAAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAABBwEAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-13T20:29:51.853Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SceneManager.h",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\SceneManager.h",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\SceneManager.h",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\SceneManager.h",
-              "RelativeToolTip": "Multiplayer2DShooter\\SceneManager.h",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-24T17:57:56.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "string",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\string",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\include\\string",
@@ -427,26 +457,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Texture.cpp",
-              "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Texture.cpp",
-              "RelativeDocumentMoniker": "Multiplayer2DShooter\\Texture.cpp",
-              "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\Texture.cpp",
-              "RelativeToolTip": "Multiplayer2DShooter\\Texture.cpp",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAlwHQAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-24T17:40:40.581Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "AssetRegistry.h",
               "DocumentMoniker": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\AssetRegistry.h",
               "RelativeDocumentMoniker": "Multiplayer2DShooter\\AssetRegistry.h",
               "ToolTip": "C:\\Users\\Skele\\OneDrive\\Desktop\\Demos\\networking-demos\\Demo_One\\Multiplayer2DShooter\\Multiplayer2DShooter\\AssetRegistry.h",
               "RelativeToolTip": "Multiplayer2DShooter\\AssetRegistry.h",
-              "ViewState": "AgIAAAoAAAAAAAAAAABBwCQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAABRwCQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-09T18:48:26.703Z",
               "EditorCaption": ""

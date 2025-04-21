@@ -3,6 +3,7 @@
 #include "Texture.h"
 #include "GameObject.h"
 #include "GameObjectRegistry.h"
+#include "AssetRegistry.h"
 
 class Wall : public GameObject
 {
@@ -37,7 +38,7 @@ Wall::Wall(SDL_Renderer* renderer, float posX, float posY, float angle, std::str
 {
 	this->posX = posX;
 	this->posY = posY;
-	this->texture.loadFromFile(renderer, textureName);
+	this->texture = *AssetRegistry::Get().GetAsset<Texture>("wall");
 	collision = { posX, posY, (float)texture.getWidth(), (float)texture.getHeight() };
 	this->angle = angle;
 	this->objectType = "wall";
@@ -67,3 +68,7 @@ bool Wall::HandleCollision(GameObject* collidingObject)
 {
 	return false;
 }
+
+
+
+

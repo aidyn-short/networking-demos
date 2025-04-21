@@ -2,6 +2,10 @@
 #include "GameObjectRegistry.h"
 #include "Scene.h"
 #include "RifleProjectile.h"
+
+
+
+
 Player::Player()
 {
     //Initialize the offsets
@@ -118,7 +122,7 @@ void Player::Update(float deltaTime)
 
 
     posX += velX * Time::Get().GetDeltaTime();
-    if ((posX < 0) || (posX + Player_WIDTH > 1280)) {
+    if ((posX < 0) || (posX + Player_WIDTH > LEVEL_WIDTH)) {
         posX -= velX * Time::Get().GetDeltaTime();
     }
 
@@ -126,7 +130,7 @@ void Player::Update(float deltaTime)
 
 
     posY += velY * Time::Get().GetDeltaTime();
-    if ((posY < 0) || (posY + Player_HEIGHT > 960)) {
+    if ((posY < 0) || (posY + Player_HEIGHT > LEVEL_HEIGHT)) {
         posY -= velY * Time::Get().GetDeltaTime();
 
     }
@@ -269,8 +273,10 @@ bool Player::HandleCollision(GameObject* collidingObject)
 
                 if (health <= 0)
                 {
-                    posX = 0;
-                    posY = 0;
+
+                    SDL_Point playerSpawn =  playerSpawns[std::rand() % 4 + 1];
+                    posX = playerSpawn.x;
+                    posY = playerSpawn.y;
                     health = 100;
                 }
 

@@ -4,11 +4,6 @@
 
 
 
-RifleProjectile::RifleProjectile() {
-
-
-
-}
 
 RifleProjectile::RifleProjectile(float playerPosX, float playerPosY, float angle) {
 
@@ -99,7 +94,7 @@ void RifleProjectile::Render(SDL_Renderer* renderer, SDL_Point camPos)
 bool RifleProjectile::HandleCollision(GameObject* collidingObject)
 {
 
-	if (collidingObject->objectType != "rifleProjectile")
+	if (collidingObject->objectType == "wall" || collidingObject->objectType == "player")
 	{
 
 		SetEnalbed(false);

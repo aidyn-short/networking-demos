@@ -4,6 +4,10 @@
 #include "Wall.h"
 #include "Socket.h"
 #include "Rifle.h"
+#include <vector>
+
+
+
 
 
 class GameScene: public Scene
@@ -11,6 +15,7 @@ class GameScene: public Scene
 public:
 	GameScene();
 	~GameScene();
+	
 
 private:
 
@@ -28,9 +33,16 @@ private:
 
 
 
+
+
+
 	Player* playerOne = NULL;
 	SDL_Rect camera = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };
-	Texture* background = NULL;
+	std::vector<Texture*> background;
+
+
+
+
 	Wall* wallOne = NULL;
 	Socket* tcpSocket = NULL;
 	Socket* udpSocket = NULL;
@@ -77,25 +89,68 @@ void GameScene::Init(SDL_Renderer* renderer, SceneManager* manager)
 	
 
 
-	
+	for (int x = 0; x < 30; x++)
+	{
+		for (int y = 0; y < 30; y++)
+		{
+			Texture* newTexture = AssetRegistry::Get().GetAsset<Texture>("background");
+			background.push_back(newTexture);
+		}
+
+	}
+
+
+	for (int i = 0; i < 30; i++)
+	{
+		Wall* topWall = new Wall(renderer, i * 100, 0, 0 , "wall.bmp");
+		Wall* leftWall = new Wall(renderer, 0, i * 100, 0, "wall.bmp");
+
+		Wall* rightall = new Wall(renderer, LEVEL_WIDTH - 100, i * 100, 0, "wall.bmp");
+
+		Wall* bottomWall = new Wall(renderer, i * 100, LEVEL_HEIGHT - 100, 0, "wall.bmp");
+
+
+	}
+
+	std::srand(10);
+
+
+	for (int i = 0; i < 100; i++)
+	{
+		Wall* randomWall = new Wall(renderer, 100* (std::rand() % 21 + 2), 100 * (std::rand() % 21 + 2), 0, "wall.bmp");
+
+	}
+
+	for (int i = 0; i < 20; i++)
+	{
+		Rifle* randomRifle = new Rifle(100 * (std::rand() % 21 + 2), 100 * (std::rand() % 21 + 2));
+
+	}
+
+
 
 	Texture* playerTexture = new Texture();
 	TTF_Font* font = TTF_OpenFont("lazy.ttf", 20);
 	playerTexture->loadFromRenderedText(renderer, "i", SDL_Color{ 255,255,255,255 }, font);
-	background = new Texture();
-	background->loadFromFile(renderer, "menu.png");
 
 	playerOne = new Player();
 	playerOne->SetClient(std::stoi(clientNumber));
+
+
+	std::srand(std::time(0));
+	SDL_Point playerSpawn = playerSpawns[std::rand() % 4 + 1];
+	playerOne->posX = playerSpawn.x;
+	playerOne->posY = playerSpawn.y;
 	GameObjectRegistry::Get().Add(playerOne);
 
 
 	rifleOne = new Rifle(400, 200);
 
 
+	
 
 
-	wallOne = new Wall(renderer, 400, 400, 0, "left.bmp");
+	wallOne = new Wall(renderer, 400, 400, 0, "wall.bmp");
 
 
 
@@ -137,6 +192,8 @@ void GameScene::Update(float deltaTime)
 	}
 
 	
+	GameObjectRegistry::Get().CheckCollision();
+	GameObjectRegistry::Get().RemoveDisabled();
 
 
 	
@@ -156,7 +213,7 @@ void GameScene::Render(SDL_Renderer* renderer)
 	camera.y = (playerOne->getPosY() + Player::Player_HEIGHT / 2) - SCREEN_HEIGHT / 2;
 
 
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 	SDL_RenderClear(renderer);
 
 	if (camera.x < 0)
@@ -175,7 +232,20 @@ void GameScene::Render(SDL_Renderer* renderer)
 	{
 		camera.y = LEVEL_HEIGHT - camera.h;
 	}
-	background->render(renderer, -100 - camera.x, -100 - camera.y);
+	
+
+
+
+	for (int x = 0; x < 30; x++)
+	{
+		for (int y = 0; y < 30; y++)
+		{
+			background[x * 30 + y]->render(renderer, x * 100 - camera.x, y * 100 - camera.y);
+		}
+
+	}
+
+	
 
 	GameObjectRegistry::Get().RenderAll(renderer, SDL_Point{ camera.x, camera.y });
 

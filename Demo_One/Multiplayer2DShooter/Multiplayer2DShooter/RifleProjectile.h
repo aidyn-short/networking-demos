@@ -4,7 +4,7 @@
 class RifleProjectile : public GameObject
 {
 public:
-	RifleProjectile();
+
 	RifleProjectile(float playerPosX, float playerPosY, float angle);
 
 

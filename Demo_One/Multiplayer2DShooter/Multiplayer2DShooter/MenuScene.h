@@ -73,6 +73,7 @@ void MenuScene::Init(SDL_Renderer* renderer, SceneManager* manager)
 	titleText->setPosition(SCREEN_WIDTH / 2 - titleText->getTextWidth() / 2, 200);
 
 	menuBackground.loadFromFile(renderer, "menu.png");
+	menuBackground.SetScale(2, 2);
 
 	startButton = new Button(renderer, "lazy.ttf", 30, SDL_Color{ 0,255,0,255 }, "Play", [manager,renderer]() {
 		GameScene* game = new GameScene();
@@ -99,7 +100,7 @@ void MenuScene::Render(SDL_Renderer* renderer)
 	SDL_RenderClear(renderer);
 
 
-	menuBackground.render(renderer, 0, 0);
+	menuBackground.render(renderer, -100 , -100);
 	startButton->render(renderer);
 	exitButton->render(renderer);
 	
