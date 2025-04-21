@@ -2,7 +2,7 @@
 #include <SDL2/SDL.h>
 #include "Texture.h"
 #include "GameObject.h"
-
+#include "Weapon.h"
 
 
 
@@ -16,7 +16,7 @@ public:
 
 
     //Maximum axis velocity of the Player
-    static const int Player_VEL = 100;
+    static const int Player_VEL = 200;
 
     //Initializes the variables
     Player();
@@ -51,5 +51,12 @@ private:
     float velX,velY;
 
     bool solidCollision = false;
+
+    Weapon* playerWeapon;
+
+    int health = 100;
+
+    std::string currentSprite = "player";
+
 
 };

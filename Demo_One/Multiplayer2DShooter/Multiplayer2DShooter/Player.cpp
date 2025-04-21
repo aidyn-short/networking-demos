@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "GameObjectRegistry.h"
 #include "Scene.h"
+#include "RifleProjectile.h"
 Player::Player()
 {
     //Initialize the offsets
@@ -28,6 +29,19 @@ Player::Player()
 
 void Player::HandleEvent(SDL_Event& event) 
 {
+
+
+    if (event.type == SDL_MOUSEBUTTONDOWN)
+    {
+        if (playerWeapon!= NULL)
+        {
+            playerWeapon->Fire(posX + collision.w/2, posY + collision.h/2, angle);
+        }
+    
+    }
+
+
+
 
     //If a key was pressed
     if (event.type == SDL_KEYDOWN && event.key.repeat == 0)
@@ -155,6 +169,8 @@ std::string Player::Write()
     playerInfo += std::to_string(posY);
     playerInfo += "=";
     playerInfo += std::to_string(angle);
+    playerInfo += "=";
+    playerInfo += (currentSprite);
 
     return playerInfo;
 }
@@ -167,6 +183,15 @@ void Player::Read(std::vector<std::string> info)
     posY = std::stof(info[4]);
     angle = std::stof(info[5]);
    
+    if (currentSprite != info[6])
+    {
+        currentSprite = info[6];
+        this->texture = *AssetRegistry::Get().GetAsset<Texture>(currentSprite);
+
+    }
+   
+
+
     collision.x = posX;
     collision.y = posY;
 
@@ -180,26 +205,88 @@ void Player::Render(SDL_Renderer* renderer, SDL_Point camPos)
 
 bool Player::HandleCollision(GameObject* collidingObject)
 {
+    
+
+    if (collidingObject->objectType == "rifle")
+    {
+        Weapon* weapon = dynamic_cast<Weapon*>(collidingObject);
+
+
+        if (weapon)
+        {
+            
+            weapon->held = true;
+            weapon->visible = false;
+            weapon->SetEnalbed(false);
+        
+      
+           
+            if (client == GameObjectRegistry::Get().GetClientNumber())
+            {
+                playerWeapon = weapon;
+                std::cout << "Picked up weapon" << std::endl;
+                currentSprite = "playerRifle";
+                this->texture = *AssetRegistry::Get().GetAsset<Texture>("playerRifle");
+
+            }
+
+        }
+
+
+        
+
+
+    }
+
+
+
+
+
+
+
 
     if (client == GameObjectRegistry::Get().GetClientNumber())
     {
-        solidCollision = true;
-
-
-        bool colliding = solidCollision;
-        if (colliding)
+        if (collidingObject->objectType == "player" || collidingObject->objectType == "wall")
         {
             //Move back
             posX -= velX * Time::Get().GetDeltaTime();
             posY -= velY * Time::Get().GetDeltaTime();
             solidCollision = false;
+
+        }
+      
+        if (collidingObject->objectType == "rifleProjectile")
+        {
+            
+            RifleProjectile* projectile = dynamic_cast<RifleProjectile*>(collidingObject);
+
+            if (projectile)
+            {
+                health -= projectile->damage;
+
+                std::cout << "health at:  " << health << std::endl;
+
+                if (health <= 0)
+                {
+                    posX = 0;
+                    posY = 0;
+                    health = 100;
+                }
+
+
+            }
+
+
         }
 
-        std::cout << "collided wit" << collidingObject->posX << " " << collidingObject->posY << "I am" << posX << "  " << posY << std::endl;
 
-
-        return false;
     }
+
+
+
+
+
 
     return false;
 }

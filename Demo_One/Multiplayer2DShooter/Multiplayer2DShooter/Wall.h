@@ -40,6 +40,7 @@ Wall::Wall(SDL_Renderer* renderer, float posX, float posY, float angle, std::str
 	this->texture.loadFromFile(renderer, textureName);
 	collision = { posX, posY, (float)texture.getWidth(), (float)texture.getHeight() };
 	this->angle = angle;
+	this->objectType = "wall";
 	GameObjectRegistry::Get().Add(this);
 
 }

@@ -1,9 +1,11 @@
 #pragma once
 #include "GameObject.h"
 #include <vector>
-#include <unordered_map>
+#include <unordered_map>I 
 #include <sstream>
 #include "player.h"
+#include "Rifle.h"
+#include "RifleProjectile.h"
 
 
 
@@ -22,10 +24,20 @@ public:
 
 
 	void Add(GameObject* object) {
-		objects.push_back(object);
+		pendingObjects.push_back(object);
+
 		objectMap[std::to_string(object->GetClientID()) + std::to_string(object->GetID())] = object;
 
 	}
+
+	void AddPending() {
+		if (!pendingObjects.empty()) {
+			objects.insert(objects.end(),pendingObjects.begin(), pendingObjects.end());
+			pendingObjects.clear();
+		}
+
+	}
+
 
 	GameObject* GetByID(std::string id) {
 		auto object = objectMap.find(id);
@@ -61,8 +73,12 @@ public:
 	void RenderAll(SDL_Renderer* renderer, SDL_Point camera) {
 
 		for (auto& obj : objects) {
-			obj->Render(renderer, camera);
+			if (obj->GetEnabled())
+			{
+				obj->Render(renderer, camera);
 
+			}
+			
 		}
 	}
 
@@ -78,6 +94,30 @@ public:
 		if (!s.empty() && s.back() == '/') s.pop_back();
 
 		return s;
+	}
+
+
+	std::string Write() {
+
+		std::string messageToSend;
+		for (auto& obj : objects) {
+			if (obj->GetClientID() == clientNumber)
+			{
+				std::string potentialMsg = obj->Write();
+
+				if (potentialMsg != "")
+				{
+					potentialMsg += "+";
+					messageToSend += potentialMsg;
+				}
+
+
+			
+			}
+
+		}
+		return messageToSend;
+
 	}
 
 
@@ -97,7 +137,12 @@ public:
 			udpMessages.push_back(TrimMessage(item));
 		}
 
+
+
 		for (const std::string& msg : udpMessages) {
+
+	
+
 
 			std::vector<std::string> parts;
 			std::stringstream msgStream(msg);
@@ -112,6 +157,10 @@ public:
 				parts.back().pop_back();
 			}
 
+			if (parts.size() < 2)
+			{
+				continue;
+			}
 
 
 			if (parts[1] ==std::to_string(clientNumber))
@@ -128,10 +177,17 @@ public:
 					Player* remotePlayer = new Player();
 					remotePlayer->Read(parts);
 					Add(remotePlayer);
-					std::cout << "Player made";
+			
 				}
+				if (parts[0] == "rifleProjectile")
+				{
+					RifleProjectile* remoteProjectile = new RifleProjectile();
+					remoteProjectile->Read(parts);
+					Add(remoteProjectile);
+			
 
-
+				}
+		
 
 
 			}
@@ -159,6 +215,7 @@ public:
 				obj->HandleEvent(event);
 			}
 		}
+		AddPending();
 	}
 
 
@@ -284,6 +341,8 @@ public:
 
 private:
 
+	std::vector<GameObject*> pendingObjects;
+
 	std::vector<GameObject*> objects;
 	std::unordered_map<std::string, GameObject*> objectMap; 
 
@@ -293,14 +352,21 @@ private:
 	}
 
 	void RemoveDisabled() {
-		auto deletedObjects = std::remove_if(objects.begin(), objects.end(), IsEnabled);
-
-		for (auto object = deletedObjects; object != objects.end(); ++object)
-		{
-			delete* object;
+		auto it = objects.begin();
+		while (it != objects.end()) {
+			if (!(*it)->GetEnabled()) {
+				GameObject* obj = *it;
+				if (obj->deleteObject)
+				{
+					delete obj;
+				}
+				it = objects.erase(it);
+				
+			}
+			else {
+				++it;
+			}
 		}
-
-		objects.erase(deletedObjects, objects.end());
 	}
 
 

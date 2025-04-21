@@ -129,6 +129,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Rifle.cpp" />
+    <ClCompile Include="RifleProjectile.cpp" />
     <ClCompile Include="Socket.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -140,6 +142,8 @@
     <ClInclude Include="GameObjectRegistry.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Rifle.h" />
+    <ClInclude Include="RifleProjectile.h" />
     <ClInclude Include="Socket.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="Texture.h" />
@@ -149,6 +153,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Wall.h" />
+    <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

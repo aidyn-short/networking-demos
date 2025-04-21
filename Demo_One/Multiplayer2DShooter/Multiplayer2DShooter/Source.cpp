@@ -117,6 +117,26 @@ bool init() {
 	playerTexture->SetScale(.33f, .33f);
 	AssetRegistry::Get().Register("player", playerTexture);
 	
+
+
+	Texture* playerRifle = new Texture();
+	playerRifle->loadFromFile(renderer, "survivor-shoot_rifle_0.png");
+	playerRifle->SetScale(.33f, .33f);
+	AssetRegistry::Get().Register("playerRifle", playerRifle);
+
+
+
+
+	Texture* rifleTexture = new Texture();
+	rifleTexture->loadFromFile(renderer, "rifle.png");
+	AssetRegistry::Get().Register("rifle", rifleTexture);
+
+
+	Texture* projectileTexture = new Texture();
+	projectileTexture->loadFromFile(renderer, "Zombie-Tileset---_0371_Capa-372.png");
+	AssetRegistry::Get().Register("rifleProjectile", projectileTexture);
+
+
 	
 	return success;
 }

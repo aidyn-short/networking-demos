@@ -3,7 +3,7 @@
 #include "Player.h"
 #include "Wall.h"
 #include "Socket.h"
-
+#include "Rifle.h"
 
 
 class GameScene: public Scene
@@ -34,7 +34,9 @@ private:
 	Wall* wallOne = NULL;
 	Socket* tcpSocket = NULL;
 	Socket* udpSocket = NULL;
+	
 
+	Rifle* rifleOne = NULL;
 
 
 };
@@ -85,10 +87,13 @@ void GameScene::Init(SDL_Renderer* renderer, SceneManager* manager)
 
 	playerOne = new Player();
 	playerOne->SetClient(std::stoi(clientNumber));
-
-
-
 	GameObjectRegistry::Get().Add(playerOne);
+
+
+	rifleOne = new Rifle(400, 200);
+
+
+
 
 	wallOne = new Wall(renderer, 400, 400, 0, "left.bmp");
 
@@ -112,7 +117,7 @@ void GameScene::Update(float deltaTime)
 
 	Address addressIGuess = Address("127.0.0.1", 5556);
 
-	std::string message = playerOne->Write();
+	std::string message = GameObjectRegistry::Get().Write();
 
 
 	udpSocket->SendTo(message.data(), message.size(), Address("127.0.0.1", 5556));

@@ -1,5 +1,287 @@
-﻿  Socket.cpp
-C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Socket.cpp(240,40): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+﻿  Player.cpp
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Texture.h(36,36): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Texture.h(37,38): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Time.h(18,31): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,33): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,33): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(277,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,29): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,37): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,37): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,33): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,47): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,47): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,36): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,36): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,53): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,43): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Player.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(17,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(18,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(77,52): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(78,53): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(102,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(150,12): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(155,12): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(203,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Player.cpp(203,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Rifle.cpp
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Time.h(18,31): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Texture.h(36,36): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Texture.h(37,38): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,33): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,33): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(277,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,29): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,37): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,37): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,33): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,47): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,47): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,36): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,36): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,53): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,43): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Rifle.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Rifle.cpp(19,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Rifle.cpp(20,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Rifle.cpp(39,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Rifle.cpp(39,33): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Source.cpp
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Texture.h(36,36): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Texture.h(37,38): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Time.h(18,31): warning C4244: '=': conversion from 'Uint32' to 'float', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,33): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(241,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,33): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(242,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(277,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,29): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,37): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(324,37): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,33): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,33): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,47): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(325,47): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,36): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,36): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,53): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(326,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,43): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\GameObjectRegistry.h(327,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Wall.h(55,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\Multiplayer2DShooter\Wall.h(55,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'Source.cpp')
+  
+  Generating Code...
   Multiplayer2DShooter.vcxproj -> C:\Users\Skele\OneDrive\Desktop\Demos\networking-demos\Demo_One\Multiplayer2DShooter\x64\Debug\Multiplayer2DShooter.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
