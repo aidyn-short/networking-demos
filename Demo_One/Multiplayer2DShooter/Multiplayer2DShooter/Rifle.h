@@ -16,4 +16,9 @@ private:
 
 	void Fire(float playerPosX, float playerPosY, float angle)  override;
 
+
+	bool HandleCollision(GameObject* collidingObject) override;
+
+
+
 };

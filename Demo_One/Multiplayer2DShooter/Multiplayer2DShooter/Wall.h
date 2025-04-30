@@ -66,6 +66,10 @@ void Wall::HandleEvent(SDL_Event& event)
 
 bool Wall::HandleCollision(GameObject* collidingObject)
 {
+
+
+
+
 	return false;
 }
 

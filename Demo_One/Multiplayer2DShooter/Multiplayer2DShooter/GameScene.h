@@ -123,7 +123,7 @@ void GameScene::Init(SDL_Renderer* renderer, SceneManager* manager)
 
 	for (int i = 0; i < 20; i++)
 	{
-		Rifle* randomRifle = new Rifle(100 * (std::rand() % 21 + 2), 100 * (std::rand() % 21 + 2));
+		Rifle* randomRifle = new Rifle(100 * (std::rand() % 21 + 2 + .5f), 100 * (std::rand() % 21 + 2 + .5f));
 
 	}
 
@@ -170,14 +170,14 @@ void GameScene::Update(float deltaTime)
 
 	char buffer[4096];
 
-	Address addressIGuess = Address("127.0.0.1", 5556);
+	Address address = Address("127.0.0.1", 5556);
 
 	std::string message = GameObjectRegistry::Get().Write();
 
 
 	udpSocket->SendTo(message.data(), message.size(), Address("127.0.0.1", 5556));
 
-	size_t recvSize =  udpSocket->RecvFrom(buffer, 4096, addressIGuess);
+	size_t recvSize =  udpSocket->RecvFrom(buffer, 4096, address);
 
 
 

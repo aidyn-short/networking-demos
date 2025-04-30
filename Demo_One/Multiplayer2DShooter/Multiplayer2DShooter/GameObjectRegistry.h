@@ -143,7 +143,7 @@ public:
 				parts.push_back(segment);
 			}
 
-			// Optional: remove trailing '/' from last part
+
 			if (!parts.empty() && parts.back().back() == '/') {
 				parts.back().pop_back();
 			}
@@ -156,7 +156,6 @@ public:
 			if (parts[1] ==std::to_string(clientNumber))
 			{
 				// do nothing it's a local object that's already updated
-				//std::cout << "local";
 			}
 			else if (GetByID((parts[1] + parts[2])) == nullptr)
 			{
@@ -180,6 +179,7 @@ public:
 			}
 			else
 			{
+				//networked object that already exists and needs to be updated
 				GetByID((parts[1] + parts[2]))->Read(parts);
 		
 			}

@@ -8,8 +8,8 @@
 
 class SceneManager;
 
-const int SCREEN_HEIGHT = 540*1.5;
-const int SCREEN_WIDTH = 960*1.5;
+const int SCREEN_HEIGHT = 540*2;
+const int SCREEN_WIDTH = 960*2;
 
 
 const int LEVEL_WIDTH = 2500;

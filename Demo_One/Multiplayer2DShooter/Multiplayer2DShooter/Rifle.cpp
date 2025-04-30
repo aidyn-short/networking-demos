@@ -52,5 +52,19 @@ void Rifle::Fire(float playerPosX, float playerPosY, float angle) {
 
 }
 
+bool Rifle::HandleCollision(GameObject* collidingObject)
+{
+
+	if (collidingObject->objectType == "wall")
+	{
+
+		SetEnalbed(false);
+
+	}
+
+
+	return false;
+}
+
 
 
